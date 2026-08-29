@@ -3,370 +3,581 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCU // GRAFO RELAZIONALE</title>
+<title>SCU // SACRA CORONA UNITA</title>
 <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <style>
-  :root {
-    --bg: #000a00; --green: #00ff41; --green-dim: #00aa28; --green-glow: rgba(0,255,65,0.12);
-    --text: #aaffaa; --text-dim: #447744; --border: rgba(0,255,65,0.18); --border-bright: rgba(0,255,65,0.55);
-    --cyan: #22d3ee; --orange: #fb923c; --red: #fb7185; --violet: #a78bfa; --blue: #60a5fa;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', 'Fira Code', monospace; overflow: hidden; }
-  #header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(0,10,0,0.95); border-bottom: 1px solid var(--border-bright); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; backdrop-filter: blur(8px); }
-  #header h1 { font-size: 1.25rem; font-weight: 700; color: var(--green); letter-spacing: 0.15em; animation: glitch 8s infinite, flicker 12s infinite; }
-  .sys-tag { font-size: 0.55rem; color: #000; background: var(--green); padding: 0.1rem 0.35rem; letter-spacing: 0.1em; font-weight: 700; }
-  .title-sub { font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.08em; }
-  .cursor { color: var(--green); animation: blink 1s step-end infinite; font-size: 1rem; }
-  #stats { font-size: 12px; opacity: 0.8; }
-  #network { width: 100vw; height: 100vh; }
-  #sidebar { position: fixed; top: 56px; right: 0; width: 380px; height: calc(100vh - 56px); background: rgba(0,10,0,0.95); border-left: 1px solid var(--border-bright); overflow-y: auto; padding: 16px; z-index: 90; transform: translateX(100%); transition: transform 0.3s ease; }
-  #sidebar.open { transform: translateX(0); }
-  #sidebar h2 { font-size: 16px; color: var(--green); margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-  #sidebar h3 { font-size: 13px; color: var(--green); margin: 12px 0 4px; opacity: 0.9; }
-  #sidebar p, #sidebar li { font-size: 12px; line-height: 1.5; opacity: 0.85; }
-  #sidebar ul { padding-left: 16px; }
-  #sidebar .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 10px; font-weight: 600; margin: 2px; }
-  .tag-vivo { background: rgba(0,255,65,0.15); color: var(--green); border: 1px solid rgba(0,255,65,0.3); }
-  .tag-detenuto { background: rgba(251,113,133,0.15); color: var(--red); border: 1px solid rgba(251,113,133,0.3); }
-  .tag-morto { background: rgba(100,100,100,0.2); color: #888; border: 1px solid rgba(100,100,100,0.3); }
-  .tag-clan { background: rgba(201,168,76,0.15); color: var(--green); border: 1px solid rgba(201,168,76,0.3); }
-  .tag-org { background: rgba(167,139,250,0.15); color: var(--violet); border: 1px solid rgba(167,139,250,0.3); }
-  #filters { position: fixed; top: 56px; left: 0; width: 220px; background: rgba(0,10,0,0.95); border-right: 1px solid var(--border-bright); padding: 12px; z-index: 90; max-height: calc(100vh - 56px); overflow-y: auto; }
-  #filters h3 { font-size: 12px; color: var(--green); margin: 10px 0 6px; text-transform: uppercase; letter-spacing: 1px; }
-  #filters label { display: block; font-size: 11px; padding: 3px 0; cursor: pointer; opacity: 0.8; }
-  #filters label:hover { opacity: 1; }
-  #filters input[type=checkbox] { margin-right: 6px; accent-color: var(--green); }
-  #close-sidebar { position: absolute; top: 12px; right: 12px; background: none; border: none; color: var(--text); font-size: 18px; cursor: pointer; opacity: 0.6; }
-  #close-sidebar:hover { opacity: 1; }
-  .legend { position: fixed; bottom: 16px; left: 16px; background: rgba(0,10,0,0.95); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; z-index: 90; font-size: 11px; }
-  .legend-item { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+:root {
+  --bg: #000a00; --green: #00ff41; --green-dim: #00aa28; --green-glow: rgba(0,255,65,0.12);
+  --text: #aaffaa; --text-dim: #447744; --border: rgba(0,255,65,0.18); --border-bright: rgba(0,255,65,0.55);
+  --cyan: #22d3ee; --orange: #fb923c; --red: #fb7185; --violet: #a78bfa; --blue: #60a5fa;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', 'Fira Code', monospace; overflow: hidden; height: 100vh; }
 
-  /* Jarvis-Domus animations */
-  @keyframes glitch {
-    0%,94%,100% { text-shadow: 0 0 8px var(--green); transform: none; }
-    95% { text-shadow: -2px 0 var(--red), 2px 0 var(--cyan); transform: translateX(-2px); }
-    96% { text-shadow: 2px 0 var(--red), -2px 0 var(--cyan); transform: translateX(2px); }
-    97% { text-shadow: 0 0 8px var(--green); transform: none; }
-  }
-  @keyframes flicker { 0%,100% { opacity: 1; } 50% { opacity: 0.97; } 52% { opacity: 0.9; } 54% { opacity: 1; } }
-  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+/* === HEADER === */
+#header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(0,10,0,0.97); border-bottom: 1px solid var(--border-bright); padding: 0 1rem; height: 48px; display: flex; align-items: center; gap: 0.75rem; backdrop-filter: blur(8px); }
+.sys-tag { font-size: 0.55rem; color: #000; background: var(--green); padding: 0.1rem 0.35rem; letter-spacing: 0.1em; font-weight: 700; }
+#header h1 { font-size: 1.1rem; font-weight: 700; color: var(--green); letter-spacing: 0.15em; animation: glitch 8s infinite, flicker 12s infinite; }
+.title-sub { font-size: 0.55rem; color: var(--text-dim); letter-spacing: 0.08em; }
+.cursor { color: var(--green); animation: blink 1s step-end infinite; font-size: 0.9rem; }
 
-  /* Mobile toggle buttons */
-  .mobile-toggle { display: none; position: fixed; z-index: 110; background: rgba(0,10,0,0.9); border: 1px solid var(--border-bright); color: var(--green); padding: 8px 12px; font-family: inherit; font-size: 0.7rem; cursor: pointer; border-radius: 4px; }
-  #toggle-filters { top: 60px; left: 10px; }
-  #toggle-sidebar-btn { display: none; }
+/* === HAMBURGER === */
+#hamburger { background: none; border: 1px solid var(--border-bright); color: var(--green); font-size: 1.2rem; padding: 4px 10px; cursor: pointer; border-radius: 3px; font-family: inherit; line-height: 1; }
+#hamburger:hover { background: var(--green-glow); }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    #filters { transform: translateX(-100%); transition: transform 0.3s ease; position: fixed; top: 50px; left: 0; height: calc(100vh - 50px); z-index: 95; }
-    #filters.open { transform: translateX(0); }
-    #sidebar { width: 100%; top: 50px; height: calc(100vh - 50px); }
-    .mobile-toggle { display: block; }
-    .legend { bottom: 8px; left: 8px; font-size: 0.5rem; padding: 6px 10px; }
-    .title-sub { display: none; }
-    #header h1 { font-size: 1rem; }
-  }
-  @media (max-width: 480px) {
-    #header { padding: 0.5rem 0.75rem; }
-    .sys-tag { font-size: 0.45rem; }
-    #stats { font-size: 0.5rem; }
-    .legend { display: none; }
-  }
+/* === NAV MENU === */
+#nav-menu { position: fixed; top: 48px; left: 0; width: 240px; height: calc(100vh - 48px); background: rgba(0,10,0,0.97); border-right: 1px solid var(--border-bright); z-index: 190; transform: translateX(-100%); transition: transform 0.25s ease; display: flex; flex-direction: column; padding: 1rem 0; }
+#nav-menu.open { transform: translateX(0); }
+.nav-item { padding: 0.75rem 1.25rem; font-size: 0.75rem; color: var(--text-dim); cursor: pointer; letter-spacing: 0.08em; border-left: 3px solid transparent; transition: all 0.2s; }
+.nav-item:hover { color: var(--text); background: var(--green-glow); }
+.nav-item.active { color: var(--green); border-left-color: var(--green); background: var(--green-glow); }
+.nav-item .nav-icon { margin-right: 0.5rem; }
+
+/* === TAB CONTENT === */
+.tab-content { display: none; position: fixed; top: 48px; left: 0; right: 0; bottom: 0; overflow: auto; }
+.tab-content.active { display: block; }
+
+/* === GRAFO TAB === */
+#tab-grafo { overflow: hidden; }
+#network { width: 100%; height: 100%; }
+#sidebar { position: fixed; top: 48px; right: 0; width: 360px; height: calc(100vh - 48px); background: rgba(0,10,0,0.97); border-left: 1px solid var(--border-bright); overflow-y: auto; padding: 1rem; z-index: 150; transform: translateX(100%); transition: transform 0.3s ease; }
+#sidebar.open { transform: translateX(0); }
+#sidebar h2 { font-size: 0.85rem; color: var(--green); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+#sidebar h3 { font-size: 0.7rem; color: var(--green); margin: 0.75rem 0 0.25rem; }
+#sidebar p, #sidebar li { font-size: 0.65rem; line-height: 1.5; opacity: 0.85; }
+#sidebar ul { padding-left: 1rem; }
+.tag { display: inline-block; padding: 1px 6px; border-radius: 2px; font-size: 0.55rem; font-weight: 600; margin: 1px; }
+.tag-detenuto { background: rgba(251,113,133,0.15); color: var(--red); border: 1px solid rgba(251,113,133,0.3); }
+.tag-libero { background: rgba(0,255,65,0.15); color: var(--green); border: 1px solid rgba(0,255,65,0.3); }
+.tag-morto { background: rgba(100,100,100,0.2); color: #888; border: 1px solid rgba(100,100,100,0.3); }
+#close-sidebar { position: absolute; top: 0.5rem; right: 0.75rem; background: none; border: none; color: var(--text); font-size: 1.1rem; cursor: pointer; opacity: 0.6; }
+#close-sidebar:hover { opacity: 1; }
+#filters { position: fixed; top: 48px; left: 0; width: 200px; background: rgba(0,10,0,0.97); border-right: 1px solid var(--border-bright); padding: 0.75rem; z-index: 150; max-height: calc(100vh - 48px); overflow-y: auto; }
+#filters h3 { font-size: 0.6rem; color: var(--green); margin: 0.5rem 0 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+#filters label { display: block; font-size: 0.6rem; padding: 2px 0; cursor: pointer; opacity: 0.8; }
+#filters label:hover { opacity: 1; }
+#filters input[type=checkbox] { margin-right: 4px; accent-color: var(--green); }
+.legend { position: fixed; bottom: 1rem; left: 1rem; background: rgba(0,10,0,0.95); border: 1px solid var(--border); border-radius: 4px; padding: 0.5rem 0.75rem; z-index: 150; font-size: 0.55rem; }
+.legend-item { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* === MAPPA TAB === */
+#tab-mappa { overflow: hidden; position: relative; }
+#map-container { width: 100%; height: 100%; cursor: grab; position: relative; overflow: hidden; }
+#map-container:active { cursor: grabbing; }
+#map-svg { width: 100%; height: 100%; }
+.province-path { fill-opacity: 0.3; stroke: var(--green); stroke-width: 1; transition: fill-opacity 0.3s; cursor: pointer; }
+.province-path:hover { fill-opacity: 0.6; stroke-width: 2; }
+.city-marker { cursor: pointer; transition: r 0.2s; }
+.city-marker:hover { r: 8; }
+#map-tooltip { display: none; position: fixed; z-index: 300; background: rgba(0,10,0,0.97); border: 1px solid var(--border-bright); border-radius: 4px; padding: 0.5rem 0.75rem; max-width: 280px; pointer-events: none; backdrop-filter: blur(8px); }
+#map-tooltip .tt-name { font-size: 0.7rem; font-weight: 700; color: var(--green); margin-bottom: 0.2rem; }
+#map-tooltip .tt-detail { font-size: 0.6rem; color: var(--text); line-height: 1.5; white-space: pre; }
+#map-controls { position: absolute; bottom: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 4px; z-index: 160; }
+.map-btn { background: rgba(0,10,0,0.9); border: 1px solid var(--border-bright); color: var(--green); width: 32px; height: 32px; font-size: 1rem; cursor: pointer; border-radius: 3px; font-family: inherit; display: flex; align-items: center; justify-content: center; }
+.map-btn:hover { background: var(--green-glow); }
+#map-info { position: absolute; top: 0.5rem; right: 0.5rem; background: rgba(0,10,0,0.9); border: 1px solid var(--border); border-radius: 4px; padding: 0.4rem 0.6rem; font-size: 0.55rem; color: var(--text-dim); z-index: 160; }
+
+/* === TABELLE TAB === */
+#tab-tabelle { padding: 1.5rem; overflow-y: auto; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.stat-card { background: rgba(0,15,0,0.6); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; }
+.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--green); }
+.stat-label { font-size: 0.6rem; color: var(--text-dim); margin-top: 0.25rem; letter-spacing: 0.05em; }
+.section-title { font-size: 0.85rem; color: var(--green); margin: 1.5rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); letter-spacing: 0.1em; }
+table { width: 100%; border-collapse: collapse; font-size: 0.6rem; margin-bottom: 1.5rem; }
+th { text-align: left; padding: 0.5rem; color: var(--green); border-bottom: 1px solid var(--border-bright); font-weight: 600; letter-spacing: 0.05em; position: sticky; top: 0; background: var(--bg); }
+td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); opacity: 0.85; }
+tr:hover td { background: var(--green-glow); opacity: 1; }
+.status-detenuto { color: var(--red); }
+.status-libero { color: var(--green); }
+.status-morto { color: #666; }
+
+/* === ANIMATIONS === */
+@keyframes glitch {
+  0%,94%,100% { text-shadow: 0 0 8px var(--green); transform: none; }
+  95% { text-shadow: -2px 0 var(--red), 2px 0 var(--cyan); transform: translateX(-2px); }
+  96% { text-shadow: 2px 0 var(--red), -2px 0 var(--cyan); transform: translateX(2px); }
+  97% { text-shadow: 0 0 8px var(--green); transform: none; }
+}
+@keyframes flicker { 0%,100% { opacity: 1; } 50% { opacity: 0.97; } 52% { opacity: 0.9; } 54% { opacity: 1; } }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  #sidebar { width: 100%; }
+  #filters { width: 100%; height: auto; max-height: 50vh; transform: translateX(-100%); transition: transform 0.25s; }
+  #filters.open { transform: translateX(0); }
+  .title-sub { display: none; }
+  #header h1 { font-size: 0.9rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  table { font-size: 0.55rem; }
+  th, td { padding: 0.3rem; }
+}
+@media (max-width: 480px) {
+  #header { padding: 0 0.5rem; gap: 0.5rem; }
+  .sys-tag { font-size: 0.45rem; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .legend { display: none; }
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <div id="header">
+  <button id="hamburger">☰</button>
   <span class="sys-tag">SYS</span>
   <h1>SCU</h1>
-  <span class="title-sub">// GRAFO RELAZIONALE 2006-2026</span>
+  <span class="title-sub">// SACRA CORONA UNITA · 2006-2026</span>
   <span class="cursor">▮</span>
-  <div id="stats" style="margin-left:auto;"></div>
-</div>
-<button class="mobile-toggle" id="toggle-filters">☰ FILTRI</button>
-
-<div id="filters">
-  <h3>Province</h3>
-  <div id="filter-province"></div>
-  <h3>Organizzazioni</h3>
-  <div id="filter-org"></div>
-  <h3>Stato</h3>
-  <label><input type="checkbox" checked data-state="detenuto"> Detenuti</label>
-  <label><input type="checkbox" checked data-state="vivo"> Liberi / Vivi</label>
-  <label><input type="checkbox" checked data-state="morto"> Deceduti</label>
-  <h3>Tipo Connessione</h3>
-  <div id="filter-conn"></div>
 </div>
 
-<div id="network"></div>
-
-<div id="sidebar">
-  <button id="close-sidebar">×</button>
-  <div id="sidebar-content"></div>
+<!-- NAV MENU -->
+<div id="nav-menu">
+  <div class="nav-item active" data-tab="grafo"><span class="nav-icon">◈</span> GRAFO</div>
+  <div class="nav-item" data-tab="mappa"><span class="nav-icon">◉</span> MAPPA</div>
+  <div class="nav-item" data-tab="tabelle"><span class="nav-icon">▤</span> TABELLE</div>
 </div>
 
-<div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:#00ff41"></div> Clan SCU</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#fb7185"></div> Persona (detenuto)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Persona (libero)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Org. esterna</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#447744"></div> Città / Area</div>
+<!-- TAB: GRAFO -->
+<div id="tab-grafo" class="tab-content active">
+  <div id="filters">
+    <h3>Province</h3><div id="filter-province"></div>
+    <h3>Organizzazioni</h3><div id="filter-org"></div>
+    <h3>Stato</h3>
+    <label><input type="checkbox" checked data-state="detenuto"> Detenuti</label>
+    <label><input type="checkbox" checked data-state="vivo"> Liberi</label>
+    <label><input type="checkbox" checked data-state="morto"> Deceduti</label>
+    <h3>Connessioni</h3><div id="filter-conn"></div>
+  </div>
+  <div id="network"></div>
+  <div id="sidebar"><button id="close-sidebar">×</button><div id="sidebar-content"></div></div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#00ff41"></div> Clan</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fb7185"></div> Detenuto</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Libero</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Org. esterna</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#447744"></div> Città</div>
+  </div>
+</div>
+
+<!-- TAB: MAPPA -->
+<div id="tab-mappa" class="tab-content">
+  <div id="map-container">
+    <svg id="map-svg" viewBox="0 0 4170 3287" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+  <div id="map-tooltip"><div class="tt-name"></div><div class="tt-detail"></div></div>
+  <div id="map-info">Scroll: zoom · Drag: pan · Click: dettagli</div>
+  <div id="map-controls">
+    <button class="map-btn" id="zoom-in">+</button>
+    <button class="map-btn" id="zoom-out">−</button>
+    <button class="map-btn" id="zoom-reset">⌂</button>
+  </div>
+</div>
+
+<!-- TAB: TABELLE -->
+<div id="tab-tabelle" class="tab-content">
+  <div class="stats-grid" id="stats-grid"></div>
+  <div class="section-title">// ATTORI PRINCIPALI</div>
+  <div style="overflow-x:auto;"><table id="attori-table"></table></div>
+  <div class="section-title">// OPERAZIONI GIUDIZIARIE</div>
+  <div style="overflow-x:auto;"><table id="operazioni-table"></table></div>
+  <div class="section-title">// CONNESSIONI INTER-ORGANIZZAZIONE</div>
+  <div style="overflow-x:auto;"><table id="connessioni-table"></table></div>
 </div>
 
 <script>
-// === DATA INJECTION ===
-const CLANS = [{"nome":"Giuseppe Rogoli","clan":"Rogoli-Pellegrino","citta":"Foggia","provincia":"Foggia","ruolo":"Capo storico fondatore SCU","arresti":[{"data":"2009-01-15","operazione":"Operazione Isola del Tesoro","esito":"Arrestato, estradizione dalla Spagna"},{"data":"2018-03-20","operazione":"Operazione Decimabis","esito":"Nuovo arresto per associazione mafiosa"}],"condanne":[{"anno":2012,"anni_carcere":30,"tribunale":"Corte d'Assise di Bari"},{"anno":2020,"anni_carcere":24,"tribunale":"Corte d'Appello di Lecce"}],"stato":"detenuto","note":"Fondatore della Sacra Corona Unita nel 1983. Considerato il capo dei capi fino all'estradizione."},{"nome":"Salvatore Buccarella","clan":"Buccarella","citta":"Mesagne","provincia":"Brindisi","ruolo":"Capo clan Mesagne/Brindisi","arresti":[{"data":"2007-06-12","operazione":"Operazione Last Minute","esito":"Arrestato per associazione mafiosa e traffico di stupefacenti"},{"data":"2015-11-18","operazione":"Operazione Reset","esito":"Arrestato dopo scarcerazione per recidiva"}],"condanne":[{"anno":2010,"anni_carcere":22,"tribunale":"Corte d'Assise di Brindisi"},{"anno":2018,"anni_carcere":18,"tribunale":"Corte d'Appello di Lecce"}],"stato":"detenuto","note":"Storico luogotenente SCU nella provincia di Brindisi, legato al narcotraffico internazionale."},{"nome":"Antonio Caporale","clan":"Caporale","citta":"Cerignola","provincia":"Foggia","ruolo":"Capo clan Cerignola","arresti":[{"data":"2008-09-23","operazione":"Operazione Arpia","esito":"Arrestato per estorsione e associazione mafiosa"},{"data":"2016-05-10","operazione":"Operazione Hydra","esito":"Arrestato per riorganizzazione del clan"}],"condanne":[{"anno":2011,"anni_carcere":20,"tribunale":"Tribunale di Foggia"},{"anno":2019,"anni_carcere":16,"tribunale":"Corte d'Appello di Bari"}],"stato":"detenuto","note":"Clan attivo nell'agroalimentare, estorsioni ai danni di imprenditori agricoli nel foggiano."},{"nome":"Pasquale Moretti","clan":"Moretti-Pellegrino-Lanza","citta":"Monte Sant'Angelo","provincia":"Foggia","ruolo":"Capo clan Gargano","arresti":[{"data":"2009-07-08","operazione":"Operazione Gargano","esito":"Arrestato per omicidi e associazione mafiosa"},{"data":"2017-02-14","operazione":"Operazione White Shark","esito":"Arrestato per traffico di armi e droga"}],"condanne":[{"anno":2013,"anni_carcere":30,"tribunale":"Corte d'Assise di Foggia"},{"anno":2021,"anni_carcere":28,"tribunale":"Cassazione (conferma)"}],"stato":"detenuto","note":"Clan egemone sul Gargano, coinvolto in faide sanguinose per il controllo del territorio."},{"nome":"Francesco Potenza","clan":"Potenza","citta":"Taranto","provincia":"Taranto","ruolo":"Capo clan Taranto","arresti":[{"data":"2010-03-15","operazione":"Operazione Steel","esito":"Arrestato per estorsione aggravata dal metodo mafioso"},{"data":"2019-09-25","operazione":"Operazione Rinascita Tarantina","esito":"Arrestato per infiltrazione negli appalti pubblici"}],"condanne":[{"anno":2014,"anni_carcere":18,"tribunale":"Tribunale di Taranto"},{"anno":2022,"anni_carcere":22,"tribunale":"Corte d'Appello di Lecce"}],"stato":"detenuto","note":"Infiltrazione sistematica negli appalti ILVA e nella gestione rifiuti a Taranto."},{"nome":"Vincenzo Parisi","clan":"Parisi","citta":"Bari (Japigia)","provincia":"Bari","ruolo":"Capo clan Japigia","arresti":[{"data":"2008-12-03","operazione":"Operazione Black Mamba","esito":"Arrestato per spaccio e associazione a delinquere"},{"data":"2016-07-20","operazione":"Operazione Japigia Bis","esito":"Arrestato per ricostituzione associazione mafiosa"}],"condanne":[{"anno":2012,"anni_carcere":16,"tribunale":"Tribunale di Bari"},{"anno":2019,"anni_carcere":20,"tribunale":"Corte d'Appello di Bari"}],"stato":"detenuto","note":"Controllo del quartiere Japigia, uno dei più grandi mercati di droga del Sud Italia."},{"nome":"Roberto Sinesi","clan":"Sinesi-Francavilla","citta":"Lucera","provincia":"Foggia","ruolo":"Capo clan Lucera/Foggia nord","arresti":[{"data":"2011-04-18","operazione":"Operazione Daunia","esito":"Arrestato per usura ed estorsione"},{"data":"2020-10-05","operazione":"Operazione Terra Nostra","esito":"Arrestato per infiltrazione agroalimentare"}],"condanne":[{"anno":2015,"anni_carcere":14,"tribunale":"Tribunale di Foggia"},{"anno":2023,"anni_carcere":18,"tribunale":"Corte d'Appello di Bari"}],"stato":"detenuto","note":"Attivo nel caporalato e nello sfruttamento dei braccianti agricoli nella Capitanata."},{"nome":"Cosimo Di Lauro","clan":"Di Lauro (ramo pugliese)","citta":"Foggia","provincia":"Foggia","ruolo":"Luogotenente SCU-Foggia","arresti":[{"data":"2012-06-22","operazione":"Operazione Perseo","esito":"Arrestato per associazione mafiosa transnazionale"},{"data":"2021-01-30","operazione":"Operazione Adriatico","esito":"Arrestato per traffico internazionale di cocaina"}],"condanne":[{"anno":2016,"anni_carcere":20,"tribunale":"Corte d'Assise di Bari"},{"anno":2024,"anni_carcere":24,"tribunale":"Cassazione (conferma)"}],"stato":"detenuto","note":"Ponte tra camorra napoletana e SCU pugliese per il traffico di cocaina via Albania/Montenegro."},{"nome":"Gaetano Montedoro","clan":"Montedoro","citta":"San Severo","provincia":"Foggia","ruolo":"Capo clan San Severo","arresti":[{"data":"2013-09-10","operazione":"Operazione Alto Impatto","esito":"Arrestato per omicidio e porto d'armi clandestino"},{"data":"2022-03-15","operazione":"Operazione Tavoliere","esito":"Arrestato per tentata riorganizzazione post-scarcerazione"}],"condanne":[{"anno":2017,"anni_carcere":26,"tribunale":"Corte d'Assise di Foggia"},{"anno":2024,"anni_carcere":22,"tribunale":"Corte d'Appello di Bari"}],"stato":"detenuto","note":"Coinvolto nella faida di San Severo con oltre 30 omicidi tra 2008-2015."},{"nome":"Antonio Lo Russo","clan":"Lo Russo (ramo Puglia)","citta":"Barletta","provincia":"BAT","ruolo":"Referente SCU Barletta-Andria-Trani","arresti":[{"data":"2014-11-05","operazione":"Operazione BAT","esito":"Arrestato per estorsione agli imprenditori edili"},{"data":"2023-06-12","operazione":"Operazione Pietra Bianca","esito":"Arrestato per infiltrazione settore lapideo"}],"condanne":[{"anno":2018,"anni_carcere":15,"tribunale":"Tribunale di Trani"},{"anno":2025,"anni_carcere":18,"tribunale":"Corte d'Appello di Bari"}],"stato":"detenuto","note":"Monopolio illegale nel settore estrazione e lavorazione pietra di Trani."}];
+// ============================================================
+// DATA — loaded from JSON files or embedded fallback
+// ============================================================
+let CLANS = [], CONNESSIONI = [], GEOGRAFIA = [], ATTORI = [];
 
-const CONNESSIONI = [{"persona_scu":"Giuseppe Rogoli","clan_scu":"Sacra Corona Unita (fondatore)","organizzazione_esterna":"'Ndrangheta","clan_esterno":"Bellocco di Rosarno","tipo_connessione":"Fondazione e strutturazione rituale","periodo":"1981-1983, continuativo","fonte":"Operazione Faust (DDA Reggio Calabria, 2021)"},{"persona_scu":"Gabriele Tarantino","clan_scu":"Clan Politi (SCU, Monteroni/Lecce)","organizzazione_esterna":"'Ndrangheta","clan_esterno":"Mammoliti-Fischiante","tipo_connessione":"Traffico di droga","periodo":"2019-2023","fonte":"Operazione Filo di Arianna (ROS, 2023)"},{"persona_scu":"Saulle Politi","clan_scu":"Clan Politi (SCU, Monteroni/Lecce)","organizzazione_esterna":"'Ndrangheta","clan_esterno":"Mammoliti-Fischiante","tipo_connessione":"Associazione mafiosa congiunta","periodo":"2018-2023","fonte":"Operazione Labirinto (ROS, 2018)"},{"persona_scu":"SCU Brindisi/Taranto","clan_scu":"SCU area brindisina/tarantina","organizzazione_esterna":"'Ndrangheta","clan_esterno":"Cosche reggine e crotonesi","tipo_connessione":"Traffico droga via Gioia Tauro","periodo":"2016-2021","fonte":"Operazione Faust (DDA RC, 2021)"},{"persona_scu":"Vito Paolo Vacca","clan_scu":"Clan Troisi-Vacca (Racale/Gallipoli)","organizzazione_esterna":"'Ndrangheta / Camorra","clan_esterno":"Reti interregionali","tipo_connessione":"Traffico stupefacenti","periodo":"2024-2025","fonte":"DDA Lecce, settembre 2025"},{"persona_scu":"Fernando Nocera","clan_scu":"Clan Nocera (Campi Salentina)","organizzazione_esterna":"Reti interregionali","clan_esterno":"Fornitori Spagna/Albania","tipo_connessione":"Traffico droga, riciclaggio","periodo":"2023-2024","fonte":"DDA Lecce, novembre 2023"},{"persona_scu":"Daniele Vicientino","clan_scu":"Clan Pasimeni-Vitale-Vicentino (Mesagne)","organizzazione_esterna":"Clan SCU federati","clan_esterno":"Frangia mesagnese","tipo_connessione":"Coordinamento strategico","periodo":"2020-2025","fonte":"DDA Lecce, dicembre 2025"},{"persona_scu":"Sergio Notaro","clan_scu":"SCU Campi Salentina/Squinzano","organizzazione_esterna":"Reti albanesi","clan_esterno":"Cittadini albanesi","tipo_connessione":"Traffico droga, armi","periodo":"2008-2025","fonte":"Operazione Escape (DDA Lecce, 2025)"},{"persona_scu":"Mario Papalia","clan_scu":"SCU (co-fondatore)","organizzazione_esterna":"Cosa Nostra","clan_esterno":"Non specificato","tipo_connessione":"Co-fondazione SCU","periodo":"1981-1983","fonte":"Fonti giudiziarie storiche"},{"persona_scu":"Pino Iannelli","clan_scu":"Nuova Camorra Pugliese","organizzazione_esterna":"Camorra (NCO)","clan_esterno":"Cutolo","tipo_connessione":"Fondazione NCP in Puglia","periodo":"1981-1986","fonte":"Rassegna Arma CC 2023"},{"persona_scu":"Aldo Vuto / Antonio Modeo","clan_scu":"NCP area tarantina","organizzazione_esterna":"Camorra (NCO)","clan_esterno":"NCO","tipo_connessione":"Affiliazione NCO","periodo":"1978-1986","fonte":"Rassegna Arma CC 2023"},{"persona_scu":"Gerardo Civino","clan_scu":"Clan Politi (fiancheggiatore)","organizzazione_esterna":"Guardia di Finanza","clan_esterno":"Agente corrotto","tipo_connessione":"Rivelazione segreti, custodia droga","periodo":"2023","fonte":"Operazione Filo di Arianna (2023)"},{"persona_scu":"SCU Salentina","clan_scu":"Sacra Corona Unita","organizzazione_esterna":"Camorra (Casalesi-Zagaria)","clan_esterno":"Fazione Zagaria","tipo_connessione":"Importazione droga","periodo":"2019-2026","fonte":"DDA Napoli, marzo 2026"},{"persona_scu":"SCU Tuturano","clan_scu":"SCU Brindisi","organizzazione_esterna":"Reti siciliane","clan_esterno":"Casa circondariale Agrigento","tipo_connessione":"Traffico droga","periodo":"2025","fonte":"DDA Lecce/GIP Brindisi, aprile 2025"},{"persona_scu":"Gruppo Laviano-Manco","clan_scu":"Area foggiana","organizzazione_esterna":"Camorra","clan_esterno":"Clan camorristi","tipo_connessione":"Guerra mercato droga","periodo":"1983-anni 90","fonte":"Rassegna Arma CC 2023"}];
-
-const GEOGRAFIA = [{"provincia":"Bari","citta":"Bari","clan_dominante":"Clan Strisciuglio (Capriati)","periodo_attivita":"1980-oggi","membri_chiave":["Giuseppe Capriati","Antonio Capriati","Vito Martiradonna"]},{"provincia":"Bari","citta":"Cerignola","clan_dominante":"Clan Di Tommaso-Piarulli","periodo_attivita":"1990-oggi","membri_chiave":["Rocco Di Tommaso","Francesco Piarulli"]},{"provincia":"Brindisi","citta":"Brindisi","clan_dominante":"SCU Mesagnese (Rogoli-Torre)","periodo_attivita":"1983-oggi","membri_chiave":["Pino Rogoli","Salvatore Torre","Cosimo Enza"]},{"provincia":"Brindisi","citta":"Mesagne","clan_dominante":"Clan Rogoli-Torre","periodo_attivita":"1983-oggi","membri_chiave":["Pino Rogoli","Giovanni Toraldo"]},{"provincia":"Lecce","citta":"Lecce","clan_dominante":"Clan Tornese (SCU Salentina)","periodo_attivita":"1990-oggi","membri_chiave":["Luigi Tornese","Antonio Coluccia"]},{"provincia":"Lecce","citta":"Gallipoli","clan_dominante":"Clan Padovano","periodo_attivita":"1995-oggi","membri_chiave":["Salvatore Padovano"]},{"provincia":"Foggia","citta":"Foggia","clan_dominante":"Società Foggiana","periodo_attivita":"1980-oggi","membri_chiave":["Roberto Sinesi","Giovanni Francavilla","Moreno Moretti"]},{"provincia":"Foggia","citta":"San Severo","clan_dominante":"Clan Nizzolino-Giannone","periodo_attivita":"1990-oggi","membri_chiave":["Nicola Nizzolino","Michele Giannone"]},{"provincia":"Taranto","citta":"Taranto","clan_dominante":"Clan De Carmine-Cesario","periodo_attivita":"1985-oggi","membri_chiave":["Cosimo De Carmine","Antonio Cesario"]},{"provincia":"Taranto","citta":"Martina Franca","clan_dominante":"Clan Anconitano","periodo_attivita":"1995-oggi","membri_chiave":["Vincenzo Anconitano"]},{"provincia":"BAT","citta":"Barletta","clan_dominante":"Clan Dicuonzo-Mazzarolo","periodo_attivita":"1990-oggi","membri_chiave":["Pasquale Dicuonzo","Giuseppe Mazzarolo"]},{"provincia":"BAT","citta":"Andria","clan_dominante":"Clan Griner-Di Rienzo","periodo_attivita":"1995-oggi","membri_chiave":["Francesco Griner","Michele Di Rienzo"]},{"provincia":"BAT","citta":"Trani","clan_dominante":"Clan Di Lernia","periodo_attivita":"1990-oggi","membri_chiave":["Antonio Di Lernia"]}];
-
-// === BUILD GRAPH ===
-const nodes = new vis.DataSet();
-const edges = new vis.DataSet();
-const nodeMap = {};
-
-function addNode(id, label, group, data) {
-  if (!nodeMap[id]) {
-    const n = { id, label, group, ...data };
-    nodes.add(n);
-    nodeMap[id] = n;
-  }
-  return id;
+async function loadData() {
+  try {
+    const [c, cn, g, a] = await Promise.all([
+      fetch('data/clan_puglia.json').then(r => r.json()).catch(() => ({clans:[]})),
+      fetch('data/connessioni_nazionali.json').then(r => r.json()).catch(() => ({connessioni:[]})),
+      fetch('data/geografia.json').then(r => r.json()).catch(() => ({geografia:[]})),
+      fetch('data/attori.json').then(r => r.json()).catch(() => ({attori:[]}))
+    ]);
+    CLANS = c.clans || [];
+    CONNESSIONI = cn.connessioni || [];
+    GEOGRAFIA = g.geografia || [];
+    ATTORI = a.attori || [];
+  } catch(e) { console.error('Data load error:', e); }
 }
 
-function getColor(stato) {
-  if (stato === 'detenuto') return '#fb7185';
-  if (stato === 'morto') return '#447744';
-  return '#22d3ee';
-}
+// ============================================================
+// TAB NAVIGATION
+// ============================================================
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navItems = document.querySelectorAll('.nav-item');
+const tabs = document.querySelectorAll('.tab-content');
 
-// Add province nodes
-const provinceColors = { 'Foggia': '#e67e22', 'Bari': '#3498db', 'Brindisi': '#9b59b6', 'Lecce': '#1abc9c', 'Taranto': '#fb7185', 'BAT': '#f39c12' };
-const provinceList = [...new Set(GEOGRAFIA.map(g => g.provincia))];
-provinceList.forEach(p => {
-  addNode(`prov_${p}`, p, 'province', { color: { background: provinceColors[p] || '#447744', border: provinceColors[p] || '#447744' }, shape: 'diamond', size: 25, title: `Provincia di ${p}` });
-});
+hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
 
-// Add city nodes and link to province
-GEOGRAFIA.forEach(g => {
-  const cityId = `city_${g.citta.replace(/[^a-zA-Z]/g,'_')}`;
-  addNode(cityId, g.citta, 'city', { color: { background: '#447744', border: '#336633' }, shape: 'dot', size: 15, title: `${g.citta} — ${g.clan_dominante}` });
-  edges.add({ from: `prov_${g.provincia}`, to: cityId, color: { color: '#333', opacity: 0.5 }, width: 1 });
-  
-  // Add clan node for dominant clan
-  const clanId = `clan_${g.clan_dominante.replace(/[^a-zA-Z]/g,'_')}`;
-  if (!nodeMap[clanId]) {
-    addNode(clanId, g.clan_dominante, 'clan', { color: { background: '#00ff41', border: '#00aa28' }, shape: 'box', font: { color: '#000', size: 11 }, size: 20, title: g.clan_dominante });
-  }
-  edges.add({ from: cityId, to: clanId, color: { color: '#00ff41', opacity: 0.4 }, width: 2 });
-  
-  // Add key members
-  g.membri_chiave.forEach(m => {
-    const memId = `mem_${m.replace(/[^a-zA-Z]/g,'_')}`;
-    if (!nodeMap[memId]) {
-      addNode(memId, m, 'person', { color: { background: '#22d3ee', border: '#383' }, shape: 'dot', size: 12, title: `${m} — ${g.clan_dominante}` });
-    }
-    edges.add({ from: clanId, to: memId, color: { color: '#447744', opacity: 0.3 }, width: 1 });
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const target = item.dataset.tab;
+    navItems.forEach(n => n.classList.remove('active'));
+    tabs.forEach(t => t.classList.remove('active'));
+    item.classList.add('active');
+    document.getElementById('tab-' + target).classList.add('active');
+    navMenu.classList.remove('open');
+    if (target === 'grafo' && window._network) setTimeout(() => window._network.fit({animation:true}), 100);
+    if (target === 'mappa') initMap();
+    if (target === 'tabelle') renderTables();
   });
 });
 
-// Add detailed clan members from CLANS data
-CLANS.forEach(c => {
-  const personId = `person_${c.nome.replace(/[^a-zA-Z]/g,'_')}`;
-  const color = getColor(c.stato);
-  addNode(personId, c.nome, 'person_detail', { 
-    color: { background: color, border: color }, 
-    shape: 'dot', size: 18, 
-    title: `${c.nome} — ${c.ruolo}`,
-    _data: c 
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && e.target !== hamburger) navMenu.classList.remove('open');
+});
+
+// ============================================================
+// GRAFO (vis.js) — initialized after data load
+// ============================================================
+function initGraph() {
+  const nodes = new vis.DataSet();
+  const edges = new vis.DataSet();
+  const nodeMap = {};
+
+  function addNode(id, label, group, data) {
+    if (!nodeMap[id]) { const n = {id, label, group, ...data}; nodes.add(n); nodeMap[id] = n; }
+    return id;
+  }
+  function getColor(s) { return s==='detenuto'?'#fb7185':s==='morto'?'#447744':'#22d3ee'; }
+
+  const provColors = {'Foggia':'#fb7185','Bari':'#60a5fa','Brindisi':'#a78bfa','Lecce':'#22d3ee','Taranto':'#fb923c','BAT':'#00ff41'};
+  const provinceList = [...new Set(GEOGRAFIA.map(g=>g.provincia))];
+  provinceList.forEach(p => addNode(`prov_${p}`, p, 'province', {color:{background:provColors[p]||'#447744',border:provColors[p]||'#447744'},shape:'diamond',size:25}));
+
+  GEOGRAFIA.forEach(g => {
+    const cid = `city_${g.citta.replace(/[^a-zA-Z]/g,'_')}`;
+    addNode(cid, g.citta, 'city', {color:{background:'#447744',border:'#336633'},shape:'dot',size:15,title:`${g.citta} — ${g.clan_dominante}`});
+    edges.add({from:`prov_${g.provincia}`,to:cid,color:{color:'#1a3a1a',opacity:0.5},width:1});
+    const clId = `clan_${g.clan_dominante.replace(/[^a-zA-Z]/g,'_')}`;
+    if(!nodeMap[clId]) addNode(clId, g.clan_dominante, 'clan', {color:{background:'#00ff41',border:'#00aa28'},shape:'box',font:{color:'#000',size:11},size:20});
+    edges.add({from:cid,to:clId,color:{color:'#00ff41',opacity:0.4},width:2});
+    g.membri_chiave.forEach(m => {
+      const mid = `mem_${m.replace(/[^a-zA-Z]/g,'_')}`;
+      if(!nodeMap[mid]) addNode(mid, m, 'person', {color:{background:'#22d3ee',border:'#383'},shape:'dot',size:12});
+      edges.add({from:clId,to:mid,color:{color:'#447744',opacity:0.3},width:1});
+    });
   });
-  
-  // Link to clan
-  const clanId = `clan_${c.clan.replace(/[^a-zA-Z]/g,'_')}`;
-  if (!nodeMap[clanId]) {
-    addNode(clanId, c.clan, 'clan', { color: { background: '#00ff41', border: '#00aa28' }, shape: 'box', font: { color: '#000', size: 11 }, size: 20 });
-  }
-  edges.add({ from: clanId, to: personId, color: { color: color, opacity: 0.6 }, width: 2 });
-  
-  // Link to city
-  const cityId = `city_${c.citta.replace(/[^a-zA-Z() ]/g,'_').replace(/ /g,'_')}`;
-  if (nodeMap[cityId]) {
-    edges.add({ from: cityId, to: personId, color: { color: '#1a3a1a', opacity: 0.3 }, dashes: true, width: 1 });
-  }
-});
 
-// Add external organizations
-const orgSet = new Set();
-CONNESSIONI.forEach(c => {
-  const orgName = c.organizzazione_esterna.split('/')[0].split('(')[0].trim();
-  orgSet.add(orgName);
-});
-orgSet.forEach(org => {
-  const orgId = `org_${org.replace(/[^a-zA-Z]/g,'_')}`;
-  addNode(orgId, org, 'external', { color: { background: '#a78bfa', border: '#7c5cbf' }, shape: 'triangle', size: 22, title: org });
-});
-
-// Add connection edges
-CONNESSIONI.forEach((c, i) => {
-  const personId = `person_${c.persona_scu.replace(/[^a-zA-Z]/g,'_')}`;
-  const orgName = c.organizzazione_esterna.split('/')[0].split('(')[0].trim();
-  const orgId = `org_${orgName.replace(/[^a-zA-Z]/g,'_')}`;
-  
-  // If person node doesn't exist, create it
-  if (!nodeMap[personId]) {
-    addNode(personId, c.persona_scu, 'person_conn', { color: { background: '#447744', border: '#447744' }, shape: 'dot', size: 12, title: `${c.persona_scu} — ${c.clan_scu}` });
-  }
-  
-  const edgeColor = c.tipo_connessione.toLowerCase().includes('droga') ? '#fb7185' : 
-                    c.tipo_connessione.toLowerCase().includes('fondaz') ? '#00ff41' : '#a78bfa';
-  edges.add({ 
-    from: personId, to: orgId, 
-    color: { color: edgeColor, opacity: 0.5 }, 
-    width: 2, 
-    title: `${c.tipo_connessione}\n${c.periodo}\nFonte: ${c.fonte}`,
-    _connData: c
+  CLANS.forEach(c => {
+    const pid = `person_${c.nome.replace(/[^a-zA-Z]/g,'_')}`;
+    const col = getColor(c.stato);
+    addNode(pid, c.nome, 'person_detail', {color:{background:col,border:col},shape:'dot',size:18,_data:c});
+    const clId = `clan_${c.clan.replace(/[^a-zA-Z]/g,'_')}`;
+    if(!nodeMap[clId]) addNode(clId, c.clan, 'clan', {color:{background:'#00ff41',border:'#00aa28'},shape:'box',font:{color:'#000',size:11},size:20});
+    edges.add({from:clId,to:pid,color:{color:col,opacity:0.6},width:2});
   });
-});
 
-// === RENDER ===
-const container = document.getElementById('network');
-const data = { nodes, edges };
-const options = {
-  physics: { enabled: true, solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -80, springLength: 150, springConstant: 0.04 }, stabilization: { iterations: 200 } },
-  interaction: { hover: true, tooltipDelay: 100, zoomView: true, dragView: true },
-  nodes: { font: { color: '#aaffaa', size: 11 }, borderWidth: 1 },
-  edges: { smooth: { type: 'continuous', roundness: 0.3 }, arrows: { to: { enabled: false } } }
-};
+  const orgSet = new Set();
+  CONNESSIONI.forEach(c => { const o=c.organizzazione_esterna.split('/')[0].split('(')[0].trim(); orgSet.add(o); });
+  orgSet.forEach(org => addNode(`org_${org.replace(/[^a-zA-Z]/g,'_')}`, org, 'external', {color:{background:'#a78bfa',border:'#7c5cbf'},shape:'triangle',size:22}));
 
-const network = new vis.Network(container, data, options);
+  CONNESSIONI.forEach(c => {
+    const pid = `person_${c.persona_scu.replace(/[^a-zA-Z]/g,'_')}`;
+    const orgName = c.organizzazione_esterna.split('/')[0].split('(')[0].trim();
+    const oid = `org_${orgName.replace(/[^a-zA-Z]/g,'_')}`;
+    if(!nodeMap[pid]) addNode(pid, c.persona_scu, 'person_conn', {color:{background:'#447744',border:'#447744'},shape:'dot',size:12});
+    const ec = c.tipo_connessione.toLowerCase().includes('droga')?'#fb7185':c.tipo_connessione.toLowerCase().includes('fondaz')?'#00ff41':'#a78bfa';
+    edges.add({from:pid,to:oid,color:{color:ec,opacity:0.5},width:2,title:`${c.tipo_connessione}\n${c.periodo}\n${c.fonte}`});
+  });
 
-// Stats
-document.getElementById('stats').textContent = `${nodes.length} nodi · ${edges.length} connessioni · ${CLANS.length} profili dettagliati`;
+  const container = document.getElementById('network');
+  const network = new vis.Network(container, {nodes,edges}, {
+    physics:{enabled:true,solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-80,springLength:150,springConstant:0.04},stabilization:{iterations:200}},
+    interaction:{hover:true,tooltipDelay:100,zoomView:true,dragView:true},
+    nodes:{font:{color:'#aaffaa',size:11},borderWidth:1},
+    edges:{smooth:{type:'continuous',roundness:0.3}}
+  });
+  window._network = network;
 
-// === SIDEBAR ON CLICK ===
-network.on('click', function(params) {
-  const sidebar = document.getElementById('sidebar');
-  const content = document.getElementById('sidebar-content');
-  
-  if (params.nodes.length > 0) {
-    const nodeId = params.nodes[0];
-    const node = nodes.get(nodeId);
-    let html = `<h2>${node.label}</h2>`;
-    
-    if (node._data) {
-      const d = node._data;
-      html += `<p><strong>Ruolo:</strong> ${d.ruolo}</p>`;
-      html += `<p><strong>Città:</strong> ${d.citta} (${d.provincia})</p>`;
-      html += `<p><strong>Stato:</strong> <span class="tag tag-${d.stato}">${d.stato.toUpperCase()}</span></p>`;
-      html += `<p><strong>Note:</strong> ${d.note}</p>`;
-      
-      if (d.arresti && d.arresti.length) {
-        html += `<h3>Arresti</h3><ul>`;
-        d.arresti.forEach(a => html += `<li><strong>${a.data}</strong> — ${a.operazione}<br><em>${a.esito}</em></li>`);
-        html += `</ul>`;
-      }
-      if (d.condanne && d.condanne.length) {
-        html += `<h3>Condanne</h3><ul>`;
-        d.condanne.forEach(c => html += `<li><strong>${c.anno}</strong> — ${c.anni_carcere} anni<br><em>${c.tribunale}</em></li>`);
-        html += `</ul>`;
-      }
-    } else if (node.group === 'external') {
-      html += `<p><span class="tag tag-org">Organizzazione Esterna</span></p>`;
-      const relConns = CONNESSIONI.filter(c => c.organizzazione_esterna.includes(node.label));
-      if (relConns.length) {
-        html += `<h3>Connessioni Documentate (${relConns.length})</h3><ul>`;
-        relConns.forEach(c => html += `<li><strong>${c.persona_scu}</strong> (${c.clan_scu})<br>${c.tipo_connessione}<br><em>${c.periodo}</em></li>`);
-        html += `</ul>`;
-      }
-    } else if (node.group === 'province') {
-      const cities = GEOGRAFIA.filter(g => g.provincia === node.label);
-      html += `<h3>Città (${cities.length})</h3><ul>`;
-      cities.forEach(c => html += `<li><strong>${c.citta}</strong> — ${c.clan_dominante}<br><em>${c.periodo_attivita}</em></li>`);
-      html += `</ul>`;
-    } else {
-      html += `<p>Gruppo: ${node.group}</p>`;
-      if (node.title) html += `<p>${node.title}</p>`;
-    }
-    
-    content.innerHTML = html;
-    sidebar.classList.add('open');
-  } else {
-    sidebar.classList.remove('open');
-  }
-});
+  // Sidebar
+  network.on('click', function(params) {
+    const sb = document.getElementById('sidebar'), ct = document.getElementById('sidebar-content');
+    if (params.nodes.length > 0) {
+      const node = nodes.get(params.nodes[0]);
+      let html = `<h2>${node.label}</h2>`;
+      if (node._data) {
+        const d = node._data;
+        html += `<p><strong>Ruolo:</strong> ${d.ruolo}</p><p><strong>Città:</strong> ${d.citta} (${d.provincia})</p>`;
+        html += `<p><strong>Stato:</strong> <span class="tag tag-${d.stato}">${d.stato.toUpperCase()}</span></p><p>${d.note}</p>`;
+        if(d.arresti?.length) { html += `<h3>Arresti</h3><ul>`; d.arresti.forEach(a => html += `<li><strong>${a.data}</strong> ${a.operazione}<br><em>${a.esito}</em></li>`); html += `</ul>`; }
+        if(d.condanne?.length) { html += `<h3>Condanne</h3><ul>`; d.condanne.forEach(c => html += `<li><strong>${c.anno}</strong> ${c.anni_carcere} anni — ${c.tribunale}</li>`); html += `</ul>`; }
+      } else if (node.group === 'external') {
+        const rc = CONNESSIONI.filter(c => c.organizzazione_esterna.includes(node.label));
+        html += `<h3>Connessioni (${rc.length})</h3><ul>`; rc.forEach(c => html += `<li><strong>${c.persona_scu}</strong> — ${c.tipo_connessione}<br><em>${c.periodo}</em></li>`); html += `</ul>`;
+      } else if (node.group === 'province') {
+        const cities = GEOGRAFIA.filter(g => g.provincia === node.label);
+        html += `<h3>Città (${cities.length})</h3><ul>`; cities.forEach(c => html += `<li><strong>${c.citta}</strong> — ${c.clan_dominante}</li>`); html += `</ul>`;
+      } else { html += `<p>${node.title||''}</p>`; }
+      ct.innerHTML = html; sb.classList.add('open');
+    } else { sb.classList.remove('open'); }
+  });
+  document.getElementById('close-sidebar').onclick = () => document.getElementById('sidebar').classList.remove('open');
 
-document.getElementById('close-sidebar').onclick = () => document.getElementById('sidebar').classList.remove('open');
-
-// === FILTERS ===
-function buildFilters() {
-  // Province filters
+  // Filters
   const provDiv = document.getElementById('filter-province');
-  provinceList.forEach(p => {
-    const lbl = document.createElement('label');
-    lbl.innerHTML = `<input type="checkbox" checked data-prov="${p}"> ${p}`;
-    provDiv.appendChild(lbl);
-  });
-  
-  // Org filters
+  provinceList.forEach(p => { const l=document.createElement('label'); l.innerHTML=`<input type="checkbox" checked data-prov="${p}"> ${p}`; provDiv.appendChild(l); });
   const orgDiv = document.getElementById('filter-org');
-  orgSet.forEach(org => {
-    const lbl = document.createElement('label');
-    lbl.innerHTML = `<input type="checkbox" checked data-org="${org}"> ${org}`;
-    orgDiv.appendChild(lbl);
-  });
-  
-  // Connection type filters
-  const connTypes = [...new Set(CONNESSIONI.map(c => c.tipo_connessione.split(',')[0].trim()))];
+  orgSet.forEach(o => { const l=document.createElement('label'); l.innerHTML=`<input type="checkbox" checked data-org="${o}"> ${o}`; orgDiv.appendChild(l); });
+  const connTypes = [...new Set(CONNESSIONI.map(c=>c.tipo_connessione.split(',')[0].trim()))];
   const connDiv = document.getElementById('filter-conn');
-  connTypes.forEach(t => {
-    const lbl = document.createElement('label');
-    lbl.innerHTML = `<input type="checkbox" checked data-conn="${t}"> ${t}`;
-    connDiv.appendChild(lbl);
+  connTypes.forEach(t => { const l=document.createElement('label'); l.innerHTML=`<input type="checkbox" checked data-conn="${t}"> ${t}`; connDiv.appendChild(l); });
+
+  document.addEventListener('change', function(e) {
+    if(e.target.type!=='checkbox') return;
+    const ap=[...document.querySelectorAll('[data-prov]:checked')].map(el=>el.dataset.prov);
+    const ao=[...document.querySelectorAll('[data-org]:checked')].map(el=>el.dataset.org);
+    const as=[...document.querySelectorAll('[data-state]:checked')].map(el=>el.dataset.state);
+    const vis=new Set();
+    nodes.forEach(n => {
+      let show=true;
+      if(n.group==='province'&&!ap.includes(n.label)) show=false;
+      if(n.group==='external'&&!ao.some(o=>n.label.includes(o))) show=false;
+      if(n._data&&!as.includes(n._data.stato)) show=false;
+      if(show) vis.add(n.id);
+    });
+    network.setData({nodes:new vis.DataView(nodes,{filter:n=>vis.has(n.id)}),edges:new vis.DataView(edges,{filter:e=>vis.has(e.from)&&vis.has(e.to)})});
   });
+
+  let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>network.fit({animation:true}),250);});
 }
-buildFilters();
 
-// Filter logic
-document.addEventListener('change', function(e) {
-  if (e.target.type !== 'checkbox') return;
-  
-  const activeProvs = [...document.querySelectorAll('[data-prov]:checked')].map(el => el.dataset.prov);
-  const activeOrgs = [...document.querySelectorAll('[data-org]:checked')].map(el => el.dataset.org);
-  const activeStates = [...document.querySelectorAll('[data-state]:checked')].map(el => el.dataset.state);
-  
-  const visibleNodes = new Set();
-  nodes.forEach(n => {
-    let show = true;
-    if (n.group === 'province' && !activeProvs.includes(n.label)) show = false;
-    if (n.group === 'external' && !activeOrgs.some(o => n.label.includes(o))) show = false;
-    if (n._data && !activeStates.includes(n._data.stato)) show = false;
-    if (show) visibleNodes.add(n.id);
+// ============================================================
+// MAPPA SVG ZOOMABILE CON DECLUSTERING
+// ============================================================
+let mapInitialized = false;
+function initMap() {
+  if (mapInitialized) return;
+  mapInitialized = true;
+
+  const svg = document.getElementById('map-svg');
+  const container = document.getElementById('map-container');
+  const tooltip = document.getElementById('map-tooltip');
+
+  // Load SVG map
+  fetch('assets/puglia_provinces.svg').then(r=>r.text()).then(svgText => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgText, 'image/svg+xml');
+    const paths = doc.querySelectorAll('path');
+
+    // Province density coloring
+    const provDensity = {};
+    GEOGRAFIA.forEach(g => { provDensity[g.provincia] = (provDensity[g.provincia]||0) + 1; });
+    const maxDens = Math.max(...Object.values(provDensity), 1);
+
+    // Map province names to SVG path IDs (heuristic matching)
+    const provNames = {'Bari':['bari','ba'],'Brindisi':['brindisi','br'],'Lecce':['lecce','le'],'Foggia':['foggia','fg'],'Taranto':['taranto','ta'],'BAT':['barletta','andria','trani','bat']};
+
+    paths.forEach(path => {
+      const id = (path.id || '').toLowerCase();
+      const title = (path.getAttribute('title') || path.textContent || '').toLowerCase();
+      let matchedProv = null;
+      for (const [prov, keywords] of Object.entries(provNames)) {
+        if (keywords.some(k => id.includes(k) || title.includes(k))) { matchedProv = prov; break; }
+      }
+      if (matchedProv) {
+        const density = provDensity[matchedProv] || 0;
+        const intensity = 0.15 + (density / maxDens) * 0.5;
+        const hue = density >= 3 ? '#fb7185' : density >= 2 ? '#fb923c' : '#00ff41';
+        path.style.fill = hue;
+        path.style.fillOpacity = intensity;
+        path.style.stroke = 'var(--green)';
+        path.style.strokeWidth = '1';
+        path.classList.add('province-path');
+        path.dataset.province = matchedProv;
+
+        path.addEventListener('mouseenter', (e) => {
+          const cities = GEOGRAFIA.filter(g => g.provincia === matchedProv);
+          let detail = `Clan attivi: ${cities.length}\n`;
+          cities.forEach(c => detail += `• ${c.citta}: ${c.clan_dominante}\n`);
+          showTooltip(e, matchedProv, detail);
+        });
+        path.addEventListener('mouseleave', hideTooltip);
+        path.addEventListener('click', () => {
+          const cities = GEOGRAFIA.filter(g => g.province === matchedProv);
+          alert(`${matchedProv}\n\n${cities.map(c => `${c.citta}: ${c.clan_dominante} (${c.periodo_attivita})`).join('\n')}`);
+        });
+      }
+      svg.appendChild(path);
+    });
+
+    // City markers with declustering
+    const cityCoords = {
+      'Bari':[2100,1050],'Cerignola':[1650,750],'Brindisi':[2550,1350],'Mesagne':[2350,1400],
+      'Lecce':[2650,1750],'Gallipoli':[2350,1900],'Foggia':[1700,600],'San Severo':[1600,500],
+      'Taranto':[2100,1550],'Martina Franca':[2200,1450],'Barletta':[1950,850],'Andria':[1900,900],'Trani':[1950,800]
+    };
+
+    GEOGRAFIA.forEach(g => {
+      const coords = cityCoords[g.citta];
+      if (!coords) return;
+      const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx', coords[0]);
+      circle.setAttribute('cy', coords[1]);
+      circle.setAttribute('r', '5');
+      circle.setAttribute('fill', '#00ff41');
+      circle.setAttribute('stroke', '#000');
+      circle.setAttribute('stroke-width', '1');
+      circle.classList.add('city-marker');
+      circle.dataset.city = g.citta;
+
+      circle.addEventListener('mouseenter', (e) => {
+        showTooltip(e, g.citta, `${g.clan_dominante}\nPeriodo: ${g.periodo_attivita}\nMembri: ${g.membri_chiave.join(', ')}`);
+      });
+      circle.addEventListener('mouseleave', hideTooltip);
+      svg.appendChild(circle);
+
+      // City label
+      const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+      text.setAttribute('x', coords[0] + 10);
+      text.setAttribute('y', coords[1] + 4);
+      text.setAttribute('fill', '#aaffaa');
+      text.setAttribute('font-size', '28');
+      text.setAttribute('font-family', 'JetBrains Mono, monospace');
+      text.textContent = g.citta;
+      text.style.pointerEvents = 'none';
+      svg.appendChild(text);
+    });
   });
-  
-  const view = new vis.DataView(nodes, { filter: n => visibleNodes.has(n.id) });
-  const edgeView = new vis.DataView(edges, { filter: e => visibleNodes.has(e.from) && visibleNodes.has(e.to) });
-  network.setData({ nodes: view, edges: edgeView });
-});
 
-// Mobile filter toggle
-document.getElementById('toggle-filters').addEventListener('click', function() {
-  document.getElementById('filters').classList.toggle('open');
-});
-// Close filters on outside click (mobile)
-document.getElementById('network').addEventListener('click', function() {
-  if (window.innerWidth <= 768) {
-    document.getElementById('filters').classList.remove('open');
+  // Zoom & Pan
+  let scale = 1, panX = 0, panY = 0, isPanning = false, startX, startY;
+  const vb = {x:0, y:0, w:4170, h:3287};
+
+  function updateViewBox() {
+    const w = vb.w / scale, h = vb.h / scale;
+    const x = vb.x + (vb.w - w) / 2 - panX / scale;
+    const y = vb.y + (vb.h - h) / 2 - panY / scale;
+    svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
   }
-});
-// Resize handler for vis.js
-let resizeTimer;
-window.addEventListener('resize', function() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() { network.fit({ animation: true }); }, 250);
-});
+
+  container.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    scale = Math.max(0.5, Math.min(10, scale * delta));
+    updateViewBox();
+  }, {passive: false});
+
+  container.addEventListener('mousedown', (e) => { isPanning = true; startX = e.clientX - panX; startY = e.clientY - panY; });
+  container.addEventListener('mousemove', (e) => { if(!isPanning) return; panX = e.clientX - startX; panY = e.clientY - startY; updateViewBox(); });
+  container.addEventListener('mouseup', () => isPanning = false);
+  container.addEventListener('mouseleave', () => isPanning = false);
+
+  // Touch support
+  let lastTouchDist = 0;
+  container.addEventListener('touchstart', (e) => {
+    if(e.touches.length===1) { isPanning=true; startX=e.touches[0].clientX-panX; startY=e.touches[0].clientY-panY; }
+    if(e.touches.length===2) { lastTouchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY); }
+  });
+  container.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if(e.touches.length===1&&isPanning) { panX=e.touches[0].clientX-startX; panY=e.touches[0].clientY-startY; updateViewBox(); }
+    if(e.touches.length===2) {
+      const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      scale=Math.max(0.5,Math.min(10,scale*(dist/lastTouchDist))); lastTouchDist=dist; updateViewBox();
+    }
+  },{passive:false});
+  container.addEventListener('touchend', ()=>isPanning=false);
+
+  document.getElementById('zoom-in').onclick = () => { scale=Math.min(10,scale*1.3); updateViewBox(); };
+  document.getElementById('zoom-out').onclick = () => { scale=Math.max(0.5,scale/1.3); updateViewBox(); };
+  document.getElementById('zoom-reset').onclick = () => { scale=1; panX=0; panY=0; updateViewBox(); };
+
+  function showTooltip(e, name, detail) {
+    tooltip.querySelector('.tt-name').textContent = name;
+    tooltip.querySelector('.tt-detail').textContent = detail;
+    tooltip.style.display = 'block';
+    tooltip.style.left = (e.clientX + 16) + 'px';
+    tooltip.style.top = (e.clientY - 10) + 'px';
+  }
+  function hideTooltip() { tooltip.style.display = 'none'; }
+}
+
+// ============================================================
+// TABELLE
+// ============================================================
+let tablesRendered = false;
+function renderTables() {
+  if (tablesRendered) return;
+  tablesRendered = true;
+
+  // Stats cards
+  const statsGrid = document.getElementById('stats-grid');
+  const totalClans = new Set([...CLANS.map(c=>c.clan),...GEOGRAFIA.map(g=>g.clan_dominante)]).size;
+  const totalPersons = new Set([...CLANS.map(c=>c.nome),...ATTORI.map(a=>`${a.nome} ${a.cognome}`)]).size;
+  const detenuti = CLANS.filter(c=>c.stato==='detenuto').length;
+  const operazioni = CLANS.reduce((sum,c)=>sum+(c.arresti?.length||0),0);
+  const condanneTotali = CLANS.reduce((sum,c)=>sum+(c.condanne?.reduce((s2,cd)=>s2+cd.anni_carcere,0)||0),0);
+  const provinceAttive = new Set(GEOGRAFIA.map(g=>g.provincia)).size;
+
+  const stats = [
+    {value:totalClans,label:'CLAN IDENTIFICATI'},
+    {value:totalPersons,label:'ATTORI MAPPATI'},
+    {value:detenuti,label:'ATTUALMENTE DETENUTI'},
+    {value:operazioni,label:'OPERAZIONI GIUDIZIARIE'},
+    {value:condanneTotali,label:'ANNI CONDANNA TOTALI'},
+    {value:provinceAttive,label:'PROVINCE ATTIVE'},
+    {value:CONNESSIONI.length,label:'CONNESSIONI INTER-ORG'},
+    {value:GEOGRAFIA.length,label:'AREE GEOGRAFICHE'}
+  ];
+  statsGrid.innerHTML = stats.map(s => `<div class="stat-card"><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('');
+
+  // Attori table
+  const attoriTable = document.getElementById('attori-table');
+  // Merge CLANS and ATTORI data
+  const allActors = CLANS.map(c => {
+    const attore = ATTORI.find(a => `${a.nome} ${a.cognome}` === c.nome || a.cognome === c.nome.split(' ').pop());
+    return {
+      nome: c.nome, anno_nascita: attore?.anno_nascita || null,
+      ultima_condanna: c.condanne?.length ? c.condanne[c.condanne.length-1].anno : null,
+      anni_carcere: c.condanne?.length ? c.condanne[c.condanne.length-1].anni_carcere : null,
+      tribunale: c.condanne?.length ? c.condanne[c.condanne.length-1].tribunale : null,
+      stato: c.stato, anno_scarcerazione: attore?.anno_scarcerazione_stimato || null,
+      clan: c.clan, citta: c.citta
+    };
+  });
+
+  attoriTable.innerHTML = `<thead><tr><th>Nome</th><th>Nascita</th><th>Clan</th><th>Città</th><th>Ultima Condanna</th><th>Anni</th><th>Tribunale</th><th>Stato</th><th>Scarcerazione</th></tr></thead><tbody>` +
+    allActors.map(a => `<tr>
+      <td><strong>${a.nome}</strong></td>
+      <td>${a.anno_nascita || '—'}</td>
+      <td>${a.clan}</td>
+      <td>${a.citta}</td>
+      <td>${a.ultima_condanna || '—'}</td>
+      <td>${a.anni_carcere || '—'}</td>
+      <td>${a.tribunale || '—'}</td>
+      <td class="status-${a.stato}">${a.stato.toUpperCase()}</td>
+      <td>${a.anno_scarcerazione || '—'}</td>
+    </tr>`).join('') + `</tbody>`;
+
+  // Operazioni table
+  const opTable = document.getElementById('operazioni-table');
+  const allOps = [];
+  CLANS.forEach(c => (c.arresti||[]).forEach(a => allOps.push({persona:c.nome,operazione:a.operazione,data:a.data,esito:a.esito})));
+  allOps.sort((a,b) => b.data.localeCompare(a.data));
+  opTable.innerHTML = `<thead><tr><th>Data</th><th>Operazione</th><th>Persona</th><th>Esito</th></tr></thead><tbody>` +
+    allOps.map(o => `<tr><td>${o.data}</td><td><strong>${o.operazione}</strong></td><td>${o.persona}</td><td>${o.esito}</td></tr>`).join('') + `</tbody>`;
+
+  // Connessioni table
+  const connTable = document.getElementById('connessioni-table');
+  connTable.innerHTML = `<thead><tr><th>Persona SCU</th><th>Clan</th><th>Org. Esterna</th><th>Tipo</th><th>Periodo</th><th>Fonte</th></tr></thead><tbody>` +
+    CONNESSIONI.map(c => `<tr><td>${c.persona_scu}</td><td>${c.clan_scu}</td><td>${c.organizzazione_esterna}</td><td>${c.tipo_connessione}</td><td>${c.periodo}</td><td style="font-size:0.5rem;opacity:0.7">${c.fonte}</td></tr>`).join('') + `</tbody>`;
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadData().then(() => initGraph());
 </script>
 </body>
 </html>
