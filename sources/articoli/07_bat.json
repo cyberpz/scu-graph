@@ -1,39 +1,36 @@
 {
   "success": true,
-  "data": {
-    "web": [
-      {
-        "url": "https://it.wikipedia.org/wiki/Sacra_corona_unita",
-        "title": "Sacra corona unita - Wikipedia",
-        "description": "# Sacra corona unita\n## Collegamenti esterni\n- [Riti della Sacra corona unita](http://www.lagazzettadelmezzogiorno.it/GdM_dallapuglia_NOTIZIA_PROV_01.asp?IDCategoria=292&IDNotizia=184005)[ _[collegamento interrotto](https://it.wikipedia.org/wiki/Aiuto:Collegamenti_interrotti)_], su lagazzettadelmezzogiorno.it.",
-        "position": 1
-      },
-      {
-        "url": "https://www.facebook.com/TELESVEVA/videos/ad-andria-%C3%A8-arrivata-la-ndrangheta-allarme-della-commissione-antimafia-anche-su-/4324223544513457/",
-        "title": "“Ad Andria è arrivata la 'ndrangheta”: allarme della commissione ...",
-        "description": "Ad Andria è arrivata la 'ndrangheta”: allarme della commissione antimafia anche su Trinitapoli #bat #attualità #commissioneantimafia.",
-        "position": 2
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GidIHwtVtHs&vl=en",
-        "title": "Sacra Corona Unita: Inside the Italian Secret Mafia - YouTube",
-        "description": "In Italy, the Puglia region is home to the Sacra Corona Unita, also known as the fourth mafia. Far less famous than the Cosa Nostra, ...",
-        "position": 3
-      },
-      {
-        "url": "https://www.facebook.com/TELESVEVA/videos/sacra-corona-unita-blitz-contro-il-clan-soleti-25-arresti-per-gestione-dei-rifiu/558754276583044/",
-        "title": "Sacra Corona Unita, blitz contro il clan Soleti: 25 arresti per gestione dei ...",
-        "description": "Sacra Corona Unita, blitz contro il clan Soleti: 25 arresti per gestione dei rifiuti e traffico di droga #puglia #lecce #gdf #mafia #clan ...",
-        "position": 4
-      },
-      {
-        "url": "https://www.poliziadistato.it/articolo/brindisi--operazione-contro-la-sacra-corona-unita--18-arresti",
-        "title": "Brindisi: operazione contro la Sacra Corona Unita, 18 arresti - Polizia",
-        "description": "L'operazione ha svelato ruoli e modalità operative di un agguerrito gruppo criminale facente capo al clan ARGENTIERI e costituisce il risultato di una complessa ...",
-        "position": 5
-      }
-    ]
-  },
-  "creditsUsed": 2,
-  "id": "01a04f62-853f-75fc-8d0d-b59afcf1db9d"
+  "data": [
+    {
+      "url": "https://it.wikipedia.org/wiki/Sacra_corona_unita",
+      "title": "Sacra corona unita - Wikipedia",
+      "description": "# Sacra corona unita\n## Collegamenti esterni\n- [Riti della Sacra corona unita](http://www.lagazzettadelmezzogiorno.it/GdM_dallapuglia_NOTIZIA_PROV_01.asp?IDCategoria=292&IDNotizia=184005)[ _[collegamento interrotto](https://it.wikipedia.org/wiki/Aiuto:Collegamenti_interrotti)_], su lagazzettadelmezzogiorno.it.",
+      "position": 1
+    },
+    {
+      "url": "https://www.facebook.com/TELESVEVA/videos/ad-andria-%C3%A8-arrivata-la-ndrangheta-allarme-della-commissione-antimafia-anche-su-/4324223544513457/",
+      "title": "“Ad Andria è arrivata la 'ndrangheta”: allarme della commissione ...",
+      "description": "Ad Andria è arrivata la 'ndrangheta”: allarme della commissione antimafia anche su Trinitapoli #bat #attualità #commissioneantimafia.",
+      "position": 2
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=GidIHwtVtHs&vl=en",
+      "title": "Sacra Corona Unita: Inside the Italian Secret Mafia - YouTube",
+      "description": "In Italy, the Puglia region is home to the Sacra Corona Unita, also known as the fourth mafia. Far less famous than the Cosa Nostra, ...",
+      "position": 3
+    },
+    {
+      "url": "https://www.facebook.com/TELESVEVA/videos/sacra-corona-unita-blitz-contro-il-clan-soleti-25-arresti-per-gestione-dei-rifiu/558754276583044/",
+      "title": "Sacra Corona Unita, blitz contro il clan Soleti: 25 arresti per gestione dei ...",
+      "description": "Sacra Corona Unita, blitz contro il clan Soleti: 25 arresti per gestione dei rifiuti e traffico di droga #puglia #lecce #gdf #mafia #clan ...",
+      "position": 4
+    },
+    {
+      "url": "https://www.poliziadistato.it/articolo/brindisi--operazione-contro-la-sacra-corona-unita--18-arresti",
+      "title": "Brindisi: operazione contro la Sacra Corona Unita, 18 arresti - Polizia",
+      "description": "L'operazione ha svelato ruoli e modalità operative di un agguerrito gruppo criminale facente capo al clan ARGENTIERI e costituisce il risultato di una complessa ...",
+      "position": 5
+    }
+  ],
+  "query": "{\"query\": \"Sacra Corona Unita Barletta Andria Trani BAT clan operazioni\", \"limit\": 5}"
 }
