@@ -1,0 +1,92 @@
+{
+  "geografia": [
+    {
+      "provincia": "Bari",
+      "citta": "Bari",
+      "clan_dominante": "Clan Strisciuglio",
+      "periodo_attivita": "1997-oggi",
+      "operazioni_principali": [
+        {"nome": "Vortice-Maestrale", "anno": 2021, "esito": "99 arresti; 44 condanne definitive in Cassazione (2025), pene da 2 a 30 anni"},
+        {"nome": "Conte Ugolino", "anno": 1997, "esito": "Disgregazione clan Di Cosola e Laraspata, nascita egemonia Strisciuglio"},
+        {"nome": "Operazione contro clan Capriati", "anno": 2018, "esito": "Conferma riti affiliazione SCU; sgominato clan Capriati di Bari Vecchia"}
+      ],
+      "membri_chiave": ["Domenico 'La' Strisciuglio", "Rocco Masotti", "Simone Schingaro", "Gianpiero Savarese", "Emanuele Grimaldi", "Savinuccio Parisi (clan Parisi autonomo)"],
+      "note": "Il clan Strisciuglio è egemone a Bari dal 1997 dopo la guerra con i Capriati. Altri clan attivi: Parisi (Japigia, scisso dalla SCU nel 1990), Telegrafo (San Paolo), Mercante-Diomede (Libertà), Depalma, Conte, Cipriano, Panarelli, Montani-Telegrafo, Cassano, Muolo, Svezia-Laneve, Valentini. La criminalità barese è definita 'camorra barese' o mafia barese, distinta dalla SCU salentina ma con legami."
+    },
+    {
+      "provincia": "Brindisi",
+      "citta": "Brindisi",
+      "clan_dominante": "Clan Buccarella / Clan Campana-Rogoli",
+      "periodo_attivita": "1983-oggi",
+      "operazioni_principali": [
+        {"nome": "Maxiprocesso De Tommasi+133", "anno": 1991, "esito": "Primo riconoscimento giudiziario della SCU come associazione mafiosa; centinaia di condanne"},
+        {"nome": "Last Minute", "anno": 2010, "esito": "18 arresti tra capi e promotori SCU brindisina basati su pentito Ercole Penna"},
+        {"nome": "Arresto Francesco Campana", "anno": 2011, "esito": "Cattura del reggente post-Buccarella/Rogoli a Oria; colpo durissimo alla SCU"},
+        {"nome": "Old Generation", "anno": 2016, "esito": "8 arresti contro frangia storica clan Campana a Brindisi"},
+        {"nome": "Operazione Pasimeni-Vitale-Vicientino", "anno": 2022, "esito": "14 misure cautelari; capo impartiva direttive dal carcere; sequestro base operativa Mesagne"},
+        {"nome": "Operazione Argenteri", "anno": 2005, "esito": "18 arresti contro clan Argentieri di Mesagne/Ceglie/Francavilla, contrapposto al clan Campana"}
+      ],
+      "membri_chiave": ["Giuseppe Rogoli (fondatore, detenuto)", "Salvatore Buccarella (storico capo)", "Francesco Campana (arrestato 2011)", "Alberto Lorusso", "Giovanni Donatiello", "Pasimeni-Vitale-Vicientino (frangia mesagnese attiva)"],
+      "note": "Brindisi era soprannominata 'Marlboro City' negli anni '90 per il contrabbando di sigarette dal Montenegro. La faida 1989-1991 causò oltre 100 morti. La Sacra Corona Libera (1998-2010) nacque da scissione mesagnese. Comuni chiave: Mesagne, Oria, Ostuni, Carovigno, Torre Santa Susanna, Latiano, Francavilla Fontana, Ceglie Messapica, Villa Castelli, Grottaglie. Il clan Romano ha puntato al monopolio slot machine."
+    },
+    {
+      "provincia": "Lecce",
+      "citta": "Lecce e Nord Salento",
+      "clan_dominante": "Articolazioni SCU Nord Salento (De Tommasi / D.T.)",
+      "periodo_attivita": "1989-oggi",
+      "operazioni_principali": [
+        {"nome": "Maxiprocesso De Tommasi+133", "anno": 1991, "esito": "Condanne numerosi esponenti; riconoscimento SCU come mafia"},
+        {"nome": "Operazione Salento", "anno": 1995, "esito": "1713 soldati dell'Esercito; risultati positivi contro SCU e immigrazione clandestina"},
+        {"nome": "Escape", "anno": 2025, "esito": "22 arresti; cattura latitante S.N. (frangia De Tommasi); sequestri oltre 800mila euro; arsenale con mitra MP5"},
+        {"nome": "Core", "anno": 2026, "esito": "30 misure cautelari (27 carcere); riti affiliazione documentati (croci incise, baci); Kalashnikov sequestrato; 52 indagati totali"}
+      ],
+      "membri_chiave": ["Giovanni De Tommasi (storico)", "S.N. (latitante arrestato 2025, frangia Campi Salentina)", "Clan D.T. (attivo Squinzano/Trepuzzi/Campi Salentina/Torchiarolo)"],
+      "note": "Nel Nord Salento la SCU mantiene rituali tradizionali (croci incise sulla pelle, baci sulle labbra, collanine con crocefisso). Armi chiamate con nomi femminili ('Giulia', 'Patrizia', 'Gisella'). Attivi anche a Campi Salentina, Manduria, Salice Salentino, Surbo, Veglie, Copertino. La Rosa dei Venti (1990) fu scissione leccese dalla SCU subito sgominata. Operazioni recenti confermano persistente operatività con traffico droga, estorsioni, usura al 120% annuo."
+    },
+    {
+      "provincia": "Foggia",
+      "citta": "Foggia",
+      "clan_dominante": "Società Foggiana (batterie Sinesi-Francavilla e Moretti-Pellegrino-Lanza)",
+      "periodo_attivita": "1994-oggi",
+      "operazioni_principali": [
+        {"nome": "Double Edge", "anno": 2002, "esito": "Arresti boss rivali; quarta guerra di mafia Sinesi vs Trisciuoglio"},
+        {"nome": "Corona", "anno": 2016, "esito": "Maxi-operazione ROS; documentata struttura batterie e cassa comune; condanne definitive"},
+        {"nome": "DecimAzione", "anno": 2018, "esito": "Operazione DDA Bari contro Società Foggiana"},
+        {"nome": "Operazione DecimAzione-bis", "anno": 2020, "esito": "40 arresti; estorsione, usura, tentato omicidio figli Trisciuoglio"},
+        {"nome": "Operazione congiunta Polizia-Carabinieri", "anno": 2020, "esito": "Oltre 1000 pagine ordinanza; associazione mafiosa, riciclaggio, truffe UE, infiltrazione economia legale"},
+        {"nome": "Operazione narcotraffico", "anno": 2023, "esito": "82 arresti; cartello narcotraffico tipo messicano; 200mila euro/mese cocaina"},
+        {"nome": "Operazione Sinesi-Francavilla", "anno": 2026, "esito": "6 arresti inclusi fratelli Francavilla; autoriciclaggio 600mila euro; telefono clandestino in carcere; collaborazione fratelli Ciro e Giuseppe Francavilla"}
+      ],
+      "membri_chiave": ["Roberto Sinesi (boss storico, detenuto)", "Francesco Sinesi (figlio, detenuto)", "Antonello Francavilla (capo batteria, arrestato 2026)", "Emiliano Francavilla (capo batteria, arrestato 2026)", "Ciro Francavilla (collaboratore giustizia dal 2024)", "Giuseppe Francavilla (collaboratore giustizia dal 2024)", "Rocco Moretti", "Federico Trisciuoglio", "Francesco Delli Carri", "Donato Delli Carri"],
+      "note": "La Società Foggiana ('quarta mafia') è autonoma dalla SCU, riconosciuta dal 1994. Struttura in batterie familiari con cassa comune e cicliche guerre interne. Batteria principale: Sinesi-Francavilla, Moretti-Pellegrino-Lanza, Trisciuoglio-Prencipe-Tolonese. Infiltrazione profonda in economia legale (edilizia, agricoltura, energie rinnovabili, onoranze funebri, calcio Foggia). Proiezioni internazionali: Bulgaria, Romania, Repubblica Ceca, Emilia-Romagna. Alleati clan Li Bergolis (Gargano). Affiliazione ormai per adesione implicita senza riti."
+    },
+    {
+      "provincia": "Taranto",
+      "citta": "Taranto e provincia (Manduria, Pulsano, Lizzano, Crispiano)",
+      "clan_dominante": "Clan Locorotondo (Crispiano) / Clan Agosta (Pulsano-Leporano) / Cupola di Manduria",
+      "periodo_attivita": "1986-oggi",
+      "operazioni_principali": [
+        {"nome": "Impresa", "anno": 2017, "esito": "Blitz contro SCU Manduria; arresti esponenti di spicco"},
+        {"nome": "Mercurio-Satellite", "anno": 2019, "esito": "31 misure cautelari; clan Cagnazzo-Locorotondo a Lizzano; pizzini dal carcere; racket stabilimenti balneari"},
+        {"nome": "Cupola", "anno": 2020, "esito": "23 arresti Manduria; riorganizzazione post-scarcerazioni; nuova Cupola Caniglia-Modeo-Malorgio-Palmisano"},
+        {"nome": "Taros", "anno": 2021, "esito": "16 misure cautelari; clan Agosta federato Locorotondo; scambio elettorale politico-mafioso Leporano 2019; sequestro 500mila euro"}
+      ],
+      "membri_chiave": ["Vincenzo Stranieri (boss storico SCU Manduria)", "Nazareno Malorgio (nipote Stranieri, scarcerato 2018, riorganizzatore)", "Giovanni Caniglia (Cupola Manduria)", "Walter Modeo (Cupola Manduria)", "Elio Palmisano (Cupola Manduria)", "Maurizio Agosta (clan Pulsano-Leporano, detenuto)", "Francesco Locorotondo (clan Crispiano)", "Giovanni Giuliano Cagnazzo (clan Lizzano, detenuto)"],
+      "note": "La SCU tarantina si è riorganizzata dopo le scarcerazioni post-2017 con una 'Cupola' direttiva a Manduria. Strategia di intimidazione 'silente e simbiotica'. Clan Locorotondo predominante nell'area Crispiano/Taranto. Tentativi infiltrazione amministrazioni locali (scambio elettorale). Traffico stupefacenti approvvigionato dal leccese e napoletano. Riti di affiliazione ancora praticati."
+    },
+    {
+      "provincia": "BAT",
+      "citta": "Barletta, Andria, Trani, Bisceglie, Trinitapoli",
+      "clan_dominante": "Mafia autoctona frammentata (Cannito-Lattanzio a Barletta; Pastore/Pistillo ad Andria; Fiore-Risoli a Trani; De Rosa-Buonarota a Trinitapoli)",
+      "periodo_attivita": "Anni '90-oggi",
+      "operazioni_principali": [
+        {"nome": "Operazione Anonima Pugliese", "anno": 2023, "esito": "10 arresti Andria; sequestri lampo imprenditori; colpito clan Lapenna (frangia Pastore-Campanale)"},
+        {"nome": "Operazione Pistillo-Pesce", "anno": 2023, "esito": "20 arresti Andria; processo in corso rito abbreviato; clan contiguo agli Strisciuglio di Bari"},
+        {"nome": "Operazioni Trinitapoli", "anno": 2023, "esito": "3 operazioni contro faida De Rosa-Miccoli-Buonarota vs Gallone-Carbone; omicidi e controllo territorio"},
+        {"nome": "Operazioni Barletta", "anno": 2023, "esito": "Riorganizzazione Cannito-Lattanzio e Straniero-Sarcina dopo ridimensionamento giudiziario"}
+      ],
+      "membri_chiave": ["Cannito-Lattanzio (Barletta)", "Albanese 'i vaccari' (Barletta)", "Straniero-Sarcina (Barletta)", "Pastore-Campanale (Andria, storico)", "Pistillo-Pesce (Andria, contigui Strisciuglio)", "Griner-Capogna (Andria, uccisi 2019)", "Fiore-Risoli (Trani, satellite clan Parisi Bari)", "Annacondia (Trani, storico)", "De Rosa-Miccoli-Buonarota (Trinitapoli)", "Carbone-Gallone (Trinitapoli, legati Moretti-Pellegrino Foggia)", "Amoruso (Bisceglie)", "Capriati (Bisceglie/Trani, influenza barese)"],
+      "note": "La BAT è 'zona cuscinetto' tra mafia foggiana e camorra barese. Mafia autoctona frammentata in tanti clan, modello orizzontale. Forti influenze esterne: clan baresi (Strisciuglio, Parisi, Capriati) su litoranea Trani-Bisceglie; clan foggiani (Moretti-Pellegrino) su Trinitapoli. Andria crocevia strategico smistamento droga nazionale. Attività: rapine portavalori, sequestri lampo, estorsioni, agroalimentare, scommesse online, rifiuti. Faida sanguinosa a Trinitapoli. Dia definisce la BAT come territorio con 'complessa architettura criminale' in evoluzione."
+    }
+  ]
+}

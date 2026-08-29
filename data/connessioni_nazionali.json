@@ -1,0 +1,164 @@
+{
+  "connessioni": [
+    {
+      "persona_scu": "Giuseppe Rogoli",
+      "clan_scu": "Sacra Corona Unita (fondatore)",
+      "organizzazione_esterna": "'Ndrangheta",
+      "clan_esterno": "Bellocco di Rosarno",
+      "tipo_connessione": "Fondazione e strutturazione rituale; affiliazione diretta di Rogoli alla cosca Bellocco; la SCU nacque come emanazione della 'ndrangheta in Puglia con autorizzazione di Umberto Bellocco",
+      "periodo": "1981-1983 (fondazione), rapporti continuativi fino ad oggi",
+      "fonte": "Operazione Faust (DDA Reggio Calabria, 2021); Audizione Salvatore Annacondia Commissione Antimafia 1993; Wikipedia/Enciclopedia Treccani; Corriere della Calabria 18/01/2021",
+      "dettagli": "Umberto Bellocco, capobastone della 'ndrina di Rosarno, autorizzò Giuseppe Rogoli a fondare la prima 'ndrina pugliese nel carcere di Bari. La SCU ereditò rituali, gerarchie (picciotto, santista, società minore/maggiore) e statuto dalla 'ndrangheta. Il collaboratore di giustizia Annacondia dichiarò: 'Il padre della Sacra Corona era Umberto Bellocco, grande ndranghetista che diede le regole alla Sacra Corona Unita'."
+    },
+    {
+      "persona_scu": "Gabriele Tarantino",
+      "clan_scu": "Clan Politi (SCU, Monteroni/Lecce)",
+      "organizzazione_esterna": "'Ndrangheta",
+      "clan_esterno": "Mammoliti-Fischiante",
+      "tipo_connessione": "Traffico di droga (cocaina, eroina, hashish, marijuana); approvvigionamento tramite fornitori spagnoli e cosca Mammoliti-Fischiante in diretti rapporti con narcotrafficanti sudamericani",
+      "periodo": "2019-2023",
+      "fonte": "Operazione Filo di Arianna (ROS Carabinieri, DDA Lecce, maggio 2023); Il Corriere del Giorno 15/05/2023; L'Espresso 09/08/2023",
+      "dettagli": "L'operazione Filo di Arianna ha documentato i rapporti tra Gabriele Tarantino (reggente del clan Politi dopo l'arresto di Saulle Politi) e i vertici della cosca 'ndranghetista Mammoliti-Fischiante. La cosca forniva stupefacenti al mercato leccese tramite canali spagnoli e sudamericani. Documentata anche infiltrazione in attività imprenditoriali (ittico, balneare, ristorazione) e riciclaggio tramite società fittizie intestate a cittadini albanesi."
+    },
+    {
+      "persona_scu": "Saulle Politi",
+      "clan_scu": "Clan Politi (SCU, Monteroni/Lecce)",
+      "organizzazione_esterna": "'Ndrangheta",
+      "clan_esterno": "Mammoliti-Fischiante",
+      "tipo_connessione": "Associazione mafiosa congiunta; traffico internazionale di droga; autoriciclaggio; frode fiscale",
+      "periodo": "2018-2023",
+      "fonte": "Operazione Labirinto (ROS, 2018); Operazione Filo di Arianna (ROS, 2023); DDA Lecce",
+      "dettagli": "Saulle Politi, capoclan arrestato nell'operazione Labirinto del 2018, manteneva rapporti diretti con la cosca Mammoliti-Fischiante. Dopo il suo arresto, la reggenza passò a Gabriele Tarantino che proseguì i collegamenti con la 'ndrangheta per gli approvvigionamenti di droga."
+    },
+    {
+      "persona_scu": "Non identificato (articolazione SCU Brindisi/Taranto)",
+      "clan_scu": "Sacra Corona Unita (area brindisina/tarantina)",
+      "organizzazione_esterna": "'Ndrangheta",
+      "clan_esterno": "Cosche reggine e crotonesi",
+      "tipo_connessione": "Traffico di droga via hub portuale di Gioia Tauro; narcotraffico interregionale Puglia-Calabria-Campania",
+      "periodo": "2016-2021",
+      "fonte": "Operazione Faust (DDA Reggio Calabria, gennaio 2021); Comando Provinciale Carabinieri Reggio Calabria",
+      "dettagli": "L'operazione Faust ha documentato una fiorente attività di narcotraffico che, partendo dall'hub portuale di Gioia Tauro, intersecava gli interessi illeciti di appartenenti alla SCU pugliese, con particolari aderenze a consessi della Sacra Corona Unita nelle province di Brindisi e Taranto. L'indagine ha coinvolto 49 arresti tra Reggio Calabria, Salerno, Matera, Brindisi, Taranto, Alessandria e Pavia."
+    },
+    {
+      "persona_scu": "Vito Paolo Vacca",
+      "clan_scu": "Clan Troisi-Vacca (SCU, Racale/Gallipoli)",
+      "organizzazione_esterna": "'Ndrangheta / Camorra",
+      "clan_esterno": "Reti di approvvigionamento droga interregionali",
+      "tipo_connessione": "Traffico di stupefacenti; associazione per delinquere finalizzata al traffico e spaccio; detenzione armi con metodo mafioso",
+      "periodo": "2024-2025",
+      "fonte": "Operazione DDA Lecce, settembre 2025; Internapoli 30/09/2025",
+      "dettagli": "Vito Paolo Vacca, 31 anni, nipote dello storico capo Vito Paolo Troisi, considerato erede naturale della frangia SCU operativa negli anni '90. Arrestato con 17 altri soggetti. Il clan gestiva traffico di droga con ramificazioni interregionali. Fondamentale il ruolo delle donne di famiglia (6 arrestate) nella gestione dello spaccio."
+    },
+    {
+      "persona_scu": "Fernando Nocera",
+      "clan_scu": "Clan Nocera (SCU, Campi Salentina/Lecce)",
+      "organizzazione_esterna": "Reti criminali interregionali",
+      "clan_esterno": "Fornitori droga Spagna e Albania",
+      "tipo_connessione": "Traffico di droga; riciclaggio; investimenti in titoli di credito e immobili; associazione mafiosa",
+      "periodo": "2023-2024",
+      "fonte": "Operazione DDA Lecce, novembre 2023/gennaio 2024; Stato Quotidiano 27/01/2024",
+      "dettagli": "37 arresti e sequestro beni per oltre 1 milione di euro. Il narcotraffico era il terreno imprescindibile di finanziamento dell'organizzazione. Alcuni esponenti avevano accumulato ricchezza considerevole tramite investimenti in titoli di credito, pur senza attività lavorativa lecita. Sequestrati auto di lusso, immobili a Carmiano, conti correnti."
+    },
+    {
+      "persona_scu": "Daniele Vicientino ('Il Professore')",
+      "clan_scu": "Clan Pasimeni-Vitale-Vicentino (SCU, Mesagne/Brindisi)",
+      "organizzazione_esterna": "Altri clan SCU federati",
+      "clan_esterno": "Frangia dei 'mesagnesi' e altri leader SCU",
+      "tipo_connessione": "Coordinamento strategico tra clan SCU; estorsioni; usura; traffico stupefacenti; riciclaggio tramite scommesse non autorizzate",
+      "periodo": "2020-2025",
+      "fonte": "Operazione DDA Lecce, dicembre 2025; Il Fatto Quotidiano 15/12/2025",
+      "dettagli": "13 arresti contro il clan Pasimeni-Vitale-Vicentino egemone a Mesagne. Daniele Vicientino, volto storico della SCU mesagnese, tra gli arrestati. Il capo impartiva direttive dal carcere al nipote. Forti rapporti con capi di altri gruppi della frangia dei 'mesagnesi' e altri leader SCU per concordare strategie comuni. Sistema codificato di estorsioni ('punto' o 'pensiero' dagli spacciatori)."
+    },
+    {
+      "persona_scu": "Sergio Notaro",
+      "clan_scu": "SCU (Campi Salentina/Squinzano/Casarano)",
+      "organizzazione_esterna": "Reti criminali albanesi",
+      "clan_esterno": "Cittadini albanesi per traffico droga",
+      "tipo_connessione": "Traffico di droga; associazione mafiosa; estorsioni; usura; rapine; armi ed esplosivi",
+      "periodo": "2008-2022 (latitanza), operazione 2025",
+      "fonte": "Operazione Escape (DDA Lecce, novembre 2025); TG LA7 19/11/2025; La Milano 21/11/2025",
+      "dettagli": "22 arresti, sequestri per 800.000 euro. Notaro, latitante condannato nel maxi-processo SCU, fu catturato nelle campagne di Melendugno. Durante la latitanza la guida passò al figlio. Tra gli arrestati due cittadini albanesi trovati con 30 kg di stupefacenti. Sequestrati circa 70 kg di droga, mitra MP5, fucile a canne mozze, ordigno esplosivo."
+    },
+    {
+      "persona_scu": "Non identificato (SCU area salentina)",
+      "clan_scu": "Sacra Corona Unita (Nord Salento: Squinzano, Trepuzzi, Campi Salentina, Torchiarolo)",
+      "organizzazione_esterna": "Reti di narcotraffico interregionali",
+      "clan_esterno": "Fornitori cocaina/hashish/marijuana",
+      "tipo_connessione": "Traffico di droga; riti di affiliazione tradizionali; associazione mafiosa; tentato omicidio; armi da guerra (AK-47)",
+      "periodo": "2022-2026",
+      "fonte": "Operazione CORE (DDA Lecce, maggio 2026); Corriere Salentino 26/05/2026; Antenna Sud 26/05/2026",
+      "dettagli": "30 misure cautelari (27 carcere, 3 domiciliari), 52 indagati. Documentati veri riti di affiliazione: incisione croce sulla pelle, bacio sulle labbra, dono crocefisso, brindisi. Armi battezzate con nomi femminili ('Giulia', 'Patrizia', 'Gisella'). Tentato omicidio con Kalashnikov AK-47 a Squinzano (28/12/2022). Tre summit mafiosi in masseria abbandonata e abitazione centro storico Lecce."
+    },
+    {
+      "persona_scu": "Non identificato (SCU Tuturano/Brindisi)",
+      "clan_scu": "Sacra Corona Unita (Tuturano, Brindisi)",
+      "organizzazione_esterna": "Reti criminali siciliane",
+      "clan_esterno": "Casa circondariale Agrigento",
+      "tipo_connessione": "Traffico di droga; agevolazione SCU; associazione finalizzata al traffico stupefacenti; violazioni armi",
+      "periodo": "2025",
+      "fonte": "Operazione DDA Lecce/GIP Brindisi, aprile 2025; La Sicilia Quotidiana 24/04/2025",
+      "dettagli": "10 misure cautelari eseguite in Brindisi, Lecce, Padova e case circondariali tra cui Agrigento, Lecce, Bari, Oristano, Sassari. Una misura eseguita nella casa circondariale di Agrigento segnala ramificazione SCU in Sicilia. Accuse: associazione finalizzata al traffico e spaccio, violazioni armi, agevolazione della Sacra Corona Unita attiva nella frazione di Tuturano (Brindisi)."
+    },
+    {
+      "persona_scu": "Mario Papalia",
+      "clan_scu": "Sacra Corona Unita (co-fondatore)",
+      "organizzazione_esterna": "Cosa Nostra",
+      "clan_esterno": "Non specificato (legami Cosa Nostra)",
+      "tipo_connessione": "Co-fondazione SCU; legami originari con Cosa Nostra durante la fase costitutiva",
+      "periodo": "1981-1983",
+      "fonte": "Wikipedia Sacra Corona Unita (EN); fonti giudiziarie storiche",
+      "dettagli": "Mario Papalia, legato a Cosa Nostra, fu tra i co-fondatori della SCU insieme a Giuseppe Rogoli e Vincenzo Stranieri. La presenza di esponenti di Cosa Nostra nella fase fondativa dimostra i legami originari tra la nascente mafia pugliese e la mafia siciliana, oltre che con la 'ndrangheta."
+    },
+    {
+      "persona_scu": "Pino Iannelli",
+      "clan_scu": "Nuova Camorra Pugliese / SCU (area foggiana)",
+      "organizzazione_esterna": "Camorra (Nuova Camorra Organizzata - Cutolo)",
+      "clan_esterno": "NCO di Raffaele Cutolo",
+      "tipo_connessione": "Fondazione Nuova Camorra Pugliese come emanazione NCO in Puglia; tentativo di espansione cutoliana in Capitanata",
+      "periodo": "1981-1986",
+      "fonte": "Wikipedia SCU; Rassegna Arma Carabinieri 2023-1; Diritto di Critica 2011",
+      "dettagli": "Nel 1981 Raffaele Cutolo affidò a Pino Iannelli e Alessandro Fusco il compito di fondare in Puglia la Nuova Camorra Pugliese (NCP), organizzazione di diretta emanazione della NCO. Cui si affiliarono boss tarantini Aldo Vuto e Antonio Modeo. La NCP prese piede nel foggiano e tarantino. Questa penetrazione camorrista provocò la reazione che portò alla nascita della SCU come contrappeso."
+    },
+    {
+      "persona_scu": "Aldo Vuto e Antonio Modeo",
+      "clan_scu": "Nuova Camorra Pugliese / area tarantina",
+      "organizzazione_esterna": "Camorra (NCO)",
+      "clan_esterno": "Nuova Camorra Organizzata",
+      "tipo_connessione": "Affiliazione alla NCO; traffico sigarette, armi, eroina lungo coste pugliesi",
+      "periodo": "1978-1986",
+      "fonte": "Wikipedia SCU; Rassegna Arma Carabinieri 2023-1",
+      "dettagli": "Boss tarantini affiliatisi alla Nuova Camorra Pugliese di emanazione cutoliana. Il contesto era lo spostamento del contrabbando di sigarette, armi ed eroina dalle coste napoletane a quelle pugliesi dopo l'offensiva della Guardia di Finanza del 1978."
+    },
+    {
+      "persona_scu": "Gruppo Laviano-Manco",
+      "clan_scu": "Area foggiana",
+      "organizzazione_esterna": "Camorra",
+      "clan_esterno": "Clan legati alla Camorra",
+      "tipo_connessione": "Guerra per controllo mercato stupefacenti; legami con Camorra campana",
+      "periodo": "1983-anni '90",
+      "fonte": "Rassegna Arma Carabinieri 2023-1, p.50",
+      "dettagli": "Nel 1983, dopo l'omicidio di Giuseppe Ciliberti, il crimine foggiano era monopolizzato da due gruppi in guerra per il mercato degli stupefacenti: il gruppo Agnelli-Moretti-Rizzi e il gruppo Laviano-Manco legato alla Camorra. Dimostra la penetrazione camorrista nel foggiano e le connessioni con il traffico di droga."
+    },
+    {
+      "persona_scu": "Gerardo Civino",
+      "clan_scu": "Clan Politi (SCU, Monteroni) - fiancheggiatore",
+      "organizzazione_esterna": "Guardia di Finanza (infiltrato)",
+      "clan_esterno": "N/A (agente GdF corrotto)",
+      "tipo_connessione": "Rivelazione segreti d'ufficio; favoreggiamento traffico droga Albania-Puglia; custodia droga del clan",
+      "periodo": "2023",
+      "fonte": "Operazione Filo di Arianna (ROS, maggio 2023); Il Corriere del Giorno 15/05/2023",
+      "dettagli": "Finanziere in servizio presso Gruppo GdF Brindisi, arrestato in flagranza. Rivelava ai Tarantino l'esistenza di intercettazioni su traffici illeciti con l'Albania, suggerendo di evitare forniture da quel territorio. Durante perquisizione trovati 5 kg di cocaina in casa sua a Monteroni: era il custode della droga del clan Politi."
+    },
+    {
+      "persona_scu": "Non identificato (SCU area salentina)",
+      "clan_scu": "Sacra Corona Unita",
+      "organizzazione_esterna": "Camorra (clan casalesi fazione Zagaria)",
+      "clan_esterno": "Clan dei Casalesi - fazione Zagaria",
+      "tipo_connessione": "Contatti per importazione droga; progetto criminale ambizioso con cosca Bellocco 'ndrangheta per rifornimento cocaina",
+      "periodo": "2019-2026",
+      "fonte": "Operazione DDA Napoli (marzo 2026); Il Fatto Quotidiano 30/03/2026; Il Crivello 30/03/2026",
+      "dettagli": "L'operazione contro la fazione Zagaria dei Casalesi (23 arresti, sequestri 40 milioni) ha documentato contatti con la cosca Bellocco della 'ndrangheta per importare ingenti quantitativi di droga nel Casertano. Pur essendo principalmente un asse Camorra-'Ndrangheta, il contesto operativo include la Puglia come snodo logistico e la SCU come potenziale attore nelle reti di distribuzione interregionali. Gratteri ha definito l'indagine 'di serie A'."
+    }
+  ]
+}

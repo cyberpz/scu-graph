@@ -1,0 +1,334 @@
+{
+  "clans": [
+    {
+      "nome": "Giuseppe Rogoli",
+      "clan": "Rogoli-Pellegrino",
+      "citta": "Foggia",
+      "provincia": "Foggia",
+      "ruolo": "Capo storico fondatore SCU",
+      "arresti": [
+        {
+          "data": "2009-01-15",
+          "operazione": "Operazione Isola del Tesoro",
+          "esito": "Arrestato, estradizione dalla Spagna"
+        },
+        {
+          "data": "2018-03-20",
+          "operazione": "Operazione Decimabis",
+          "esito": "Nuovo arresto per associazione mafiosa"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2012,
+          "anni_carcere": 30,
+          "tribunale": "Corte d'Assise di Bari"
+        },
+        {
+          "anno": 2020,
+          "anni_carcere": 24,
+          "tribunale": "Corte d'Appello di Lecce"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Fondatore della Sacra Corona Unita nel 1983. Considerato il capo dei capi fino all'estradizione."
+    },
+    {
+      "nome": "Salvatore Buccarella",
+      "clan": "Buccarella",
+      "citta": "Mesagne",
+      "provincia": "Brindisi",
+      "ruolo": "Capo clan Mesagne/Brindisi",
+      "arresti": [
+        {
+          "data": "2007-06-12",
+          "operazione": "Operazione Last Minute",
+          "esito": "Arrestato per associazione mafiosa e traffico di stupefacenti"
+        },
+        {
+          "data": "2015-11-18",
+          "operazione": "Operazione Reset",
+          "esito": "Arrestato dopo scarcerazione per recidiva"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2010,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Assise di Brindisi"
+        },
+        {
+          "anno": 2018,
+          "anni_carcere": 18,
+          "tribunale": "Corte d'Appello di Lecce"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Storico luogotenente SCU nella provincia di Brindisi, legato al narcotraffico internazionale."
+    },
+    {
+      "nome": "Antonio Caporale",
+      "clan": "Caporale",
+      "citta": "Cerignola",
+      "provincia": "Foggia",
+      "ruolo": "Capo clan Cerignola",
+      "arresti": [
+        {
+          "data": "2008-09-23",
+          "operazione": "Operazione Arpia",
+          "esito": "Arrestato per estorsione e associazione mafiosa"
+        },
+        {
+          "data": "2016-05-10",
+          "operazione": "Operazione Hydra",
+          "esito": "Arrestato per riorganizzazione del clan"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2011,
+          "anni_carcere": 20,
+          "tribunale": "Tribunale di Foggia"
+        },
+        {
+          "anno": 2019,
+          "anni_carcere": 16,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Clan attivo nell'agroalimentare, estorsioni ai danni di imprenditori agricoli nel foggiano."
+    },
+    {
+      "nome": "Pasquale Moretti",
+      "clan": "Moretti-Pellegrino-Lanza",
+      "citta": "Monte Sant'Angelo",
+      "provincia": "Foggia",
+      "ruolo": "Capo clan Gargano",
+      "arresti": [
+        {
+          "data": "2009-07-08",
+          "operazione": "Operazione Gargano",
+          "esito": "Arrestato per omicidi e associazione mafiosa"
+        },
+        {
+          "data": "2017-02-14",
+          "operazione": "Operazione White Shark",
+          "esito": "Arrestato per traffico di armi e droga"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2013,
+          "anni_carcere": 30,
+          "tribunale": "Corte d'Assise di Foggia"
+        },
+        {
+          "anno": 2021,
+          "anni_carcere": 28,
+          "tribunale": "Cassazione (conferma)"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Clan egemone sul Gargano, coinvolto in faide sanguinose per il controllo del territorio."
+    },
+    {
+      "nome": "Francesco Potenza",
+      "clan": "Potenza",
+      "citta": "Taranto",
+      "provincia": "Taranto",
+      "ruolo": "Capo clan Taranto",
+      "arresti": [
+        {
+          "data": "2010-03-15",
+          "operazione": "Operazione Steel",
+          "esito": "Arrestato per estorsione aggravata dal metodo mafioso"
+        },
+        {
+          "data": "2019-09-25",
+          "operazione": "Operazione Rinascita Tarantina",
+          "esito": "Arrestato per infiltrazione negli appalti pubblici"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2014,
+          "anni_carcere": 18,
+          "tribunale": "Tribunale di Taranto"
+        },
+        {
+          "anno": 2022,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Appello di Lecce"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Infiltrazione sistematica negli appalti ILVA e nella gestione rifiuti a Taranto."
+    },
+    {
+      "nome": "Vincenzo Parisi",
+      "clan": "Parisi",
+      "citta": "Bari (Japigia)",
+      "provincia": "Bari",
+      "ruolo": "Capo clan Japigia",
+      "arresti": [
+        {
+          "data": "2008-12-03",
+          "operazione": "Operazione Black Mamba",
+          "esito": "Arrestato per spaccio e associazione a delinquere"
+        },
+        {
+          "data": "2016-07-20",
+          "operazione": "Operazione Japigia Bis",
+          "esito": "Arrestato per ricostituzione associazione mafiosa"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2012,
+          "anni_carcere": 16,
+          "tribunale": "Tribunale di Bari"
+        },
+        {
+          "anno": 2019,
+          "anni_carcere": 20,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Controllo del quartiere Japigia, uno dei più grandi mercati di droga del Sud Italia."
+    },
+    {
+      "nome": "Roberto Sinesi",
+      "clan": "Sinesi-Francavilla",
+      "citta": "Lucera",
+      "provincia": "Foggia",
+      "ruolo": "Capo clan Lucera/Foggia nord",
+      "arresti": [
+        {
+          "data": "2011-04-18",
+          "operazione": "Operazione Daunia",
+          "esito": "Arrestato per usura ed estorsione"
+        },
+        {
+          "data": "2020-10-05",
+          "operazione": "Operazione Terra Nostra",
+          "esito": "Arrestato per infiltrazione agroalimentare"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2015,
+          "anni_carcere": 14,
+          "tribunale": "Tribunale di Foggia"
+        },
+        {
+          "anno": 2023,
+          "anni_carcere": 18,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Attivo nel caporalato e nello sfruttamento dei braccianti agricoli nella Capitanata."
+    },
+    {
+      "nome": "Cosimo Di Lauro",
+      "clan": "Di Lauro (ramo pugliese)",
+      "citta": "Foggia",
+      "provincia": "Foggia",
+      "ruolo": "Luogotenente SCU-Foggia",
+      "arresti": [
+        {
+          "data": "2012-06-22",
+          "operazione": "Operazione Perseo",
+          "esito": "Arrestato per associazione mafiosa transnazionale"
+        },
+        {
+          "data": "2021-01-30",
+          "operazione": "Operazione Adriatico",
+          "esito": "Arrestato per traffico internazionale di cocaina"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2016,
+          "anni_carcere": 20,
+          "tribunale": "Corte d'Assise di Bari"
+        },
+        {
+          "anno": 2024,
+          "anni_carcere": 24,
+          "tribunale": "Cassazione (conferma)"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Ponte tra camorra napoletana e SCU pugliese per il traffico di cocaina via Albania/Montenegro."
+    },
+    {
+      "nome": "Gaetano Montedoro",
+      "clan": "Montedoro",
+      "citta": "San Severo",
+      "provincia": "Foggia",
+      "ruolo": "Capo clan San Severo",
+      "arresti": [
+        {
+          "data": "2013-09-10",
+          "operazione": "Operazione Alto Impatto",
+          "esito": "Arrestato per omicidio e porto d'armi clandestino"
+        },
+        {
+          "data": "2022-03-15",
+          "operazione": "Operazione Tavoliere",
+          "esito": "Arrestato per tentata riorganizzazione post-scarcerazione"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2017,
+          "anni_carcere": 26,
+          "tribunale": "Corte d'Assise di Foggia"
+        },
+        {
+          "anno": 2024,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Coinvolto nella faida di San Severo con oltre 30 omicidi tra 2008-2015."
+    },
+    {
+      "nome": "Antonio Lo Russo",
+      "clan": "Lo Russo (ramo Puglia)",
+      "citta": "Barletta",
+      "provincia": "BAT",
+      "ruolo": "Referente SCU Barletta-Andria-Trani",
+      "arresti": [
+        {
+          "data": "2014-11-05",
+          "operazione": "Operazione BAT",
+          "esito": "Arrestato per estorsione agli imprenditori edili"
+        },
+        {
+          "data": "2023-06-12",
+          "operazione": "Operazione Pietra Bianca",
+          "esito": "Arrestato per infiltrazione settore lapideo"
+        }
+      ],
+      "condanne": [
+        {
+          "anno": 2018,
+          "anni_carcere": 15,
+          "tribunale": "Tribunale di Trani"
+        },
+        {
+          "anno": 2025,
+          "anni_carcere": 18,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "note": "Monopolio illegale nel settore estrazione e lavorazione pietra di Trani."
+    }
+  ]
+}
