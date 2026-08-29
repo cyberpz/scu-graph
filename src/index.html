@@ -535,6 +535,7 @@ function renderTables() {
   // Attori table
   const attoriTable = document.getElementById('attori-table');
   // Merge CLANS and ATTORI data
+  const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   const allActors = CLANS.map(c => {
     const attore = ATTORI.find(a => `${a.nome} ${a.cognome}` === c.nome || a.cognome === c.nome.split(' ').pop());
     return {
@@ -549,14 +550,14 @@ function renderTables() {
 
   attoriTable.innerHTML = `<thead><tr><th>Nome</th><th>Nascita</th><th>Clan</th><th>Città</th><th>Ultima Condanna</th><th>Anni</th><th>Tribunale</th><th>Stato</th><th>Scarcerazione</th></tr></thead><tbody>` +
     allActors.map(a => `<tr>
-      <td><strong>${a.nome}</strong></td>
+      <td><strong>${esc(a.nome)}</strong></td>
       <td>${a.anno_nascita || '—'}</td>
-      <td>${a.clan}</td>
-      <td>${a.citta}</td>
+      <td>${esc(a.clan)}</td>
+      <td>${esc(a.citta)}</td>
       <td>${a.ultima_condanna || '—'}</td>
       <td>${a.anni_carcere || '—'}</td>
-      <td>${a.tribunale || '—'}</td>
-      <td class="status-${a.stato}">${a.stato.toUpperCase()}</td>
+      <td>${esc(a.tribunale)}</td>
+      <td class="status-${esc(a.stato)}">${esc(a.stato).toUpperCase()}</td>
       <td>${a.anno_scarcerazione || '—'}</td>
     </tr>`).join('') + `</tbody>`;
 

@@ -1,0 +1,51 @@
+{
+  "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+  "total_results": 5,
+  "articles": [
+    {
+      "title": "Sacra corona unita",
+      "url": "https://it.wikipedia.org/wiki/Sacra_corona_unita",
+      "description": "La Sacra corona unita è un'organizzazione criminale italiana di connotazione mafiosa che ha il suo centro in Puglia, prevalentemente attiva nel Salento e ...",
+      "source": "firecrawl_search",
+      "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+      "position": 1
+    },
+    {
+      "title": "Sacra Corona Unita: Inside the Italian Secret Mafia",
+      "url": "https://www.youtube.com/watch?v=GidIHwtVtHs&vl=en",
+      "description": "In Italy, the Puglia region is home to the Sacra Corona Unita, also known as the fourth mafia. Far less famous than the Cosa Nostra, ...",
+      "source": "firecrawl_search",
+      "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+      "position": 2
+    },
+    {
+      "title": "Taranto, un pentito svela la nuova mappa della Sacra ...",
+      "url": "https://www.ilfattoquotidiano.it/2017/07/30/taranto-un-pentito-svela-la-nuova-mappa-della-sacra-corona-unita-sullo-ionio-ecco-affari-riti-e-gerarchie-criminali/3760959/",
+      "description": "Taranto, un pentito svela la nuova mappa della Sacra Corona Unita sullo Ionio: “Ecco affari, riti e gerarchie criminali”. di Francesco Casula.",
+      "source": "firecrawl_search",
+      "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+      "position": 3
+    },
+    {
+      "title": "La sacra corona unita puntava a soldi e appalti: 27 arresti ...",
+      "url": "https://www.ilsole24ore.com/art/la-sacra-corona-unita-puntava-soldi-e-appalti-27-arresti-puglia-due-sono-sindaci-AEBhBpqB",
+      "description": "Ci sono le estorsioni, le tangenti, la corruzione aggravata, il riciclaggio, la truffa aggravata per il conseguimento di erogazioni pubbliche, ...",
+      "source": "firecrawl_search",
+      "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+      "position": 4
+    },
+    {
+      "title": "Taranto, the former Ilva dispute returns to the forefront with ...",
+      "url": "https://www.youtube.com/watch?v=73z1Cb2b1Dg",
+      "description": "Taranto, la vertenza ex Ilva torna centrale con le due offerte.",
+      "source": "firecrawl_search",
+      "query": "Sacra Corona Unita Taranto ILVA appalti clan Potenza De Carmine",
+      "position": 5
+    }
+  ],
+  "metadata": {
+    "api": "firecrawl_v2_search",
+    "credits_used": 2,
+    "request_id": "01a04f62-3a44-744e-b091-abd4fa1a6795"
+  }
+}

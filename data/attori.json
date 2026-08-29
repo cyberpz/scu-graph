@@ -1,0 +1,234 @@
+{
+  "attori": [
+    {
+      "nome": "Giuseppe",
+      "cognome": "Rogoli",
+      "anno_nascita": 1946,
+      "eta_all_arresto": null,
+      "fonte_eta": "Wikipedia e articoli giornalistici (nato 13 agosto 1946 a Mesagne)",
+      "condanne": [
+        {
+          "anno": 1990,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Appello di Lecce"
+        },
+        {
+          "anno": null,
+          "anni_carcere": null,
+          "tribunale": "Ergastolo definitivo (multiple condanne)"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Fondatore SCU. Detenuto al 41-bis dal 1992. Tre ergastoli definitivi. In carcere dal 1981."
+    },
+    {
+      "nome": "Salvatore",
+      "cognome": "Buccarella",
+      "anno_nascita": 1959,
+      "eta_all_arresto": 32,
+      "fonte_eta": "Articoli 1991 (32 anni), articoli 2025 (66 anni) → nato ~1959",
+      "condanne": [
+        {
+          "anno": 1991,
+          "anni_carcere": 21,
+          "tribunale": "Maxi-processo Lecce (contumacia)"
+        },
+        {
+          "anno": 2025,
+          "anni_carcere": null,
+          "tribunale": "Decreto fermo DDA Lecce (associazione mafiosa, tentata estorsione)"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Detto 'Totò Balla'. Capo frangia tuturanesi. Recentemente in semilibertà, poi riarrestato settembre 2025. 66 anni nel 2025."
+    },
+    {
+      "nome": "Antonio",
+      "cognome": "Caporale",
+      "anno_nascita": null,
+      "eta_all_arresto": null,
+      "fonte_eta": null,
+      "condanne": [
+        {
+          "anno": 2011,
+          "anni_carcere": 20,
+          "tribunale": "Tribunale di Foggia"
+        },
+        {
+          "anno": 2019,
+          "anni_carcere": 16,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Nessuna informazione specifica trovata nelle fonti web disponibili. Potrebbe essere figura meno documentata o nome diverso nei registri giudiziari."
+    },
+    {
+      "nome": "Pasquale",
+      "cognome": "Moretti",
+      "anno_nascita": 1977,
+      "eta_all_arresto": null,
+      "fonte_eta": "Wikipedia Società Foggiana (nato a Foggia l'11.5.1977); articolo maggio 2026 (49 anni)",
+      "condanne": [
+        {
+          "anno": 2020,
+          "anni_carcere": 16,
+          "tribunale": "Operazione Decima bis (primo grado, mafia/usura/estorsione)"
+        },
+        {
+          "anno": null,
+          "anni_carcere": 42,
+          "tribunale": "Totale cumulativo (mafia, droga, usura, estorsione, armi, ricettazione)"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Detto 'il Porchetto'. Figlio di Rocco Moretti. Detenuto quasi ininterrottamente da novembre 2014. 42 anni totali di condanne."
+    },
+    {
+      "nome": "Francesco",
+      "cognome": "Potenza",
+      "anno_nascita": null,
+      "eta_all_arresto": null,
+      "fonte_eta": null,
+      "condanne": [
+        {
+          "anno": 2014,
+          "anni_carcere": 18,
+          "tribunale": "Tribunale di Taranto"
+        },
+        {
+          "anno": 2022,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Appello di Lecce"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Nessuna informazione specifica trovata per Francesco Potenza di Taranto come membro SCU. Le ricerche hanno restituito omonimi non correlati alla criminalità organizzata pugliese."
+    },
+    {
+      "nome": "Vincenzo",
+      "cognome": "Parisi",
+      "anno_nascita": null,
+      "eta_all_arresto": null,
+      "fonte_eta": null,
+      "condanne": [
+        {
+          "anno": 2012,
+          "anni_carcere": 16,
+          "tribunale": "Tribunale di Bari"
+        },
+        {
+          "anno": 2019,
+          "anni_carcere": 20,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Attenzione: le fonti parlano di SAVINO Parisi (nato 14 dicembre 1960), boss di Japigia Bari. Vincenzo Parisi potrebbe essere un parente o confusione con Savino. Savino Parisi è detenuto dal 2016 con condanne cumulative (18+10 anni)."
+    },
+    {
+      "nome": "Roberto",
+      "cognome": "Sinesi",
+      "anno_nascita": 1962,
+      "eta_all_arresto": 56,
+      "fonte_eta": "Articolo Repubblica 2018 (56 anni); ordine esecuzione 2021 (nato a Foggia il 16.10.1962); articolo 2024 (61 anni)",
+      "condanne": [
+        {
+          "anno": 1999,
+          "anni_carcere": 15,
+          "tribunale": "Processi Panunzio e Day Before (mafia)"
+        },
+        {
+          "anno": 2021,
+          "anni_carcere": 12,
+          "tribunale": "Operazione Saturno (estorsione aggravata)"
+        },
+        {
+          "anno": 2018,
+          "anni_carcere": 5,
+          "tribunale": "Armi aggravato metodo mafioso"
+        },
+        {
+          "anno": 2020,
+          "anni_carcere": 14,
+          "tribunale": "Processo Decimazione (mafia/estorsione)"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Detto 'lo zio'. Capo batteria Sinesi-Francavilla. Oltre 47 anni di reclusione totali dal 1991. Scarcerato brevemente feb 2024, poi riportato in cella. Detenuto al 41-bis."
+    },
+    {
+      "nome": "Cosimo",
+      "cognome": "Di Lauro",
+      "anno_nascita": 1973,
+      "eta_all_arresto": 32,
+      "fonte_eta": "Wikipedia (nato a Napoli l'8 dicembre 1973); morto a 48 anni nel 2022",
+      "condanne": [
+        {
+          "anno": 2008,
+          "anni_carcere": 15,
+          "tribunale": "Associazione camorristica"
+        },
+        {
+          "anno": 2008,
+          "anni_carcere": null,
+          "tribunale": "Ergastolo (omicidio Gelsomina Verde)"
+        },
+        {
+          "anno": null,
+          "anni_carcere": null,
+          "tribunale": "Ergastolo (omicidio Massimo Marino)"
+        }
+      ],
+      "stato": "morto",
+      "anno_scarcerazione_stimato": null,
+      "note": "NOTA: Cosimo Di Lauro è CAMORRA (clan Di Lauro, Scampia), NON Sacra Corona Unita. Morto il 13 giugno 2022 nel carcere di Opera (MI) in regime 41-bis. Due ergastoli. Se il task richiede membri SCU, questa voce potrebbe essere errata."
+    },
+    {
+      "nome": "Gaetano",
+      "cognome": "Montedoro",
+      "anno_nascita": null,
+      "eta_all_arresto": null,
+      "fonte_eta": null,
+      "condanne": [
+        {
+          "anno": 2017,
+          "anni_carcere": 26,
+          "tribunale": "Corte d'Assise di Foggia"
+        },
+        {
+          "anno": 2024,
+          "anni_carcere": 22,
+          "tribunale": "Corte d'Appello di Bari"
+        }
+      ],
+      "stato": "detenuto",
+      "anno_scarcerazione_stimato": null,
+      "note": "Nessuna informazione trovata per Gaetano Montedoro. Le fonti parlano di TOMMASO Montedoro (nato a Casarano il 30.10.1976), boss SCU/Casarano, arrestato 2006, condannato a 30 anni, poi collaboratore di giustizia. Gaetano potrebbe essere parente o confusione."
+    },
+    {
+      "nome": "Antonio",
+      "cognome": "Lo Russo",
+      "anno_nascita": null,
+      "eta_all_arresto": null,
+      "fonte_eta": "Latitante dal 2010, arrestato a Nizza nel 2014. Padre Salvatore Lo Russo (pentito). Antonio divenne collaboratore di giustizia nel 2016.",
+      "condanne": [
+        {
+          "anno": 2016,
+          "anni_carcere": 10,
+          "tribunale": "Sentenza definitiva (associazione camorristica, traffico sigarette)"
+        }
+      ],
+      "stato": "collaboratore_di_giustizia",
+      "anno_scarcerazione_stimato": null,
+      "note": "NOTA: Antonio Lo Russo è CAMORRA (clan Lo Russo 'capitoni' di Miano/Napoli), NON Sacra Corona Unita. Figlio di Salvatore Lo Russo (pentito). Arrestato a Nizza aprile 2014 dopo 4 anni latitanza. Collaboratore di giustizia dal 2016. Se il task richiede membri SCU, questa voce potrebbe essere errata."
+    }
+  ]
+}

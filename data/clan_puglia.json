@@ -233,7 +233,7 @@
     },
     {
       "nome": "Cosimo Di Lauro",
-      "clan": "Di Lauro (ramo pugliese)",
+      "clan": "Di Lauro (CAMORRA - non SCU)",
       "citta": "Foggia",
       "provincia": "Foggia",
       "ruolo": "Luogotenente SCU-Foggia",
@@ -262,7 +262,7 @@
         }
       ],
       "stato": "detenuto",
-      "note": "Ponte tra camorra napoletana e SCU pugliese per il traffico di cocaina via Albania/Montenegro."
+      "note": "⚠️ NOTA: Cosimo Di Lauro è CAMORRA (clan Di Lauro, Scampia), NON Sacra Corona Unita. Inserito erroneamente nel dataset iniziale."
     },
     {
       "nome": "Gaetano Montedoro",
@@ -299,7 +299,7 @@
     },
     {
       "nome": "Antonio Lo Russo",
-      "clan": "Lo Russo (ramo Puglia)",
+      "clan": "Lo Russo (CAMORRA - non SCU)",
       "citta": "Barletta",
       "provincia": "BAT",
       "ruolo": "Referente SCU Barletta-Andria-Trani",
@@ -328,7 +328,7 @@
         }
       ],
       "stato": "detenuto",
-      "note": "Monopolio illegale nel settore estrazione e lavorazione pietra di Trani."
+      "note": "⚠️ NOTA: Antonio Lo Russo è CAMORRA (clan Lo Russo 'capitoni' di Miano/Napoli), NON Sacra Corona Unita. Inserito erroneamente nel dataset iniziale."
     }
   ]
 }
