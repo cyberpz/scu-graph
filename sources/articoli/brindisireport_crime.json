@@ -1,0 +1,222 @@
+{
+  "source": "BrindisiReport.it (crime filter)",
+  "total": 36,
+  "articles": [
+    {
+      "url": "https://www.brindisireport.it/cronaca/auto-fuoco-durante-marcia-paura-provinciale.html",
+      "title": "Auto a fuoco durante la marcia, paura sulla provinciale. Strada chiusa durante l'intervento",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-09T18:15:16.183329+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/suv-rubati-ritrovati-brindisi-elicottero-carabinieri.html",
+      "title": "Controlli con l'elicottero: i carabinieri recuperano tre Suv cannibalizzati",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-09T18:15:16.183398+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incidente-stradale/incidente-auto-provinciale-francavilla-fontaa-ostuni.html",
+      "title": "Incidenti stradali / Impatto tra due auto sulla strada provinciale: intervengono i vigili del fuoco",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/violenza-sessuale-rapina-straniero-carcere-brindisi.html",
+      "title": "Cronaca / Rapina e violenza sessuale in centro: poliziotti feriti nella colluttazione con uno degli aggressori",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/lecce-molestata-trascinata-asfalto-ricattata-arrestato-21enne-brindisi.html",
+      "title": "Cronaca / Molestata, trascinata sull’asfalto per la borsa e ricattata: arrestato un 21enne",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/sport/taranto-giochi-mediterraneo-brindisino-nominato-giudice-gara-padel.html",
+      "title": "Sport / Giochi del Mediterraneo: brindisino nominato giudice di gara per i match di padel",
+      "section": "Sport",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/brindisi-rapina-shock-atti-sessuali-due-fermati-agenti-volanti.html",
+      "title": "Cronaca / Rapina shock con atti sessuali in pieno centro: presi dagli agenti delle volanti",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/carovigno-furto-sventato-deposito-ladri-fuga-recuperato-camion-escavatore.html",
+      "title": "Cronaca / Furto sventato in un deposito: ladri in fuga, recuperato camion con escavatore",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/mesagne-tentano-furto-auto-centro-commerciale-fermati-polizia-22-agosto-2026.html",
+      "title": "Cronaca / Poliziotti sventano furto d'auto al centro commerciale: fermati in tre",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-24T18:01:46.131735+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/brindisi-casa-circondariale-visita-camera-penale-24-agosto-2026.html",
+      "title": "Carcere: afa e altri problemi, seconda visita agostana della Camera Penale",
+      "section": "Attualita",
+      "scraped_at": "2026-08-25T12:01:04.321591+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incidente-stradale/incidente-mortale-veglie-salice-25-agosto-2026-arresto-san-pietro-vernotico.html",
+      "title": "Incidenti stradali / Salento, coppia di turisti muore in un frontale. Arrestato l'altro conducente: positivo a droga e alcol",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-25T12:01:04.321607+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/brindisi-provoncia-guida-ubriachi-senza-patente-stretta-carabinieri-luoghi-movida.html",
+      "title": "Stretta dei carabinieri sulla \"movida\" contro la guida in stato d'ebrezza",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-25T12:01:04.321614+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/la-foto-del-giorno/tramonto-rosso-fuoco-san-pietro-vernotico.html",
+      "title": "La foto del giorno / Un tramonto rosso fuoco \"incendia\" il cielo",
+      "section": "",
+      "scraped_at": "2026-08-26T06:00:15.223318+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/brindisi-rapina-pomeriggio-poste-viale-commenda-26-agosto-2026.html",
+      "title": "Assalto armato all'ufficio postale: un uomo da solo in azione nel pomeriggio",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-26T18:01:22.002863+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/san-pietro-vernotico-plauso-sindaca-agente-polizia-episodio-violenza-rapina-brindisi.html",
+      "title": "Poliziotti feriti durante l'arresto di un aggressore: la sindaca elogia l'intervento degli agenti",
+      "section": "Attualita",
+      "scraped_at": "2026-08-26T18:01:22.002868+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/intimidazione-giudice-mariano-tik-tok-querela-fake-news.html",
+      "title": "Offensiva social contro la giudice sotto scorta: scatta la denuncia per fake news",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T06:01:07.831639+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/francavilla-fontana-manduria-incendio-auto-marcia-26-agosto-2026.html",
+      "title": "Auto prende fuoco durante la marcia: paura sulla provinciale",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T06:01:07.831666+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/sentenza-tribunale-brindisi-rocco-casalino-diffamazione-risarcimento-dagospia.html",
+      "title": "Diffamazione ai danni di Casalino: Dagospia dovrà sborsare 75 mila euro",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T12:00:22.761461+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/brindisi-cambio-vertice-carabinieri-colonnello-acquaro-lascia-comando.html",
+      "title": "Cambio al vertice dei Carabinieri di Brindisi: il colonnello Acquaro lascia il comando",
+      "section": "Attualita",
+      "scraped_at": "2026-08-27T12:00:22.761503+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incendio-auto-movimento-complanare-ostuni.html",
+      "title": "Auto prende fuoco sulla complanare: grande spavento per il conducente",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T18:00:24.601315+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/fissata-udienza-cassazione-omicidi-cairo-spada-brindisi.html",
+      "title": "Omicidi di Cairo e Spada: oltre 200 pagine di ricorsi per gli ergastoli ai fratelli Morleo",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T18:00:24.601354+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/nuova-intimidazione-ostuni-spari-contro-casa-ex-vice-sindaco-tanzarella.html",
+      "title": "Nuova intimidazione a Ostuni: spari contro casa dell'ex vice sindaco Tanzarella",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-27T18:00:24.601373+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incendio-cabina-elettrica-vigili-fuoco-erchie.html",
+      "title": "Principio di incendio in una cabina elettrica: complesso intervento dei vigili del fuoco",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-28T06:00:35.011389+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/brindisi-rifiuti-addio-porta-a-porta-approvate-linee-guida-nuovo-appalto.html",
+      "title": "Rifiuti, addio al \"porta a porta\": approvate le linee guida del nuovo appalto",
+      "section": "Attualita",
+      "scraped_at": "2026-08-28T12:00:32.487017+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/brindisi-auto-fiamme-campagne-vigili-del-fuoco-indagini.html",
+      "title": "Auto in fiamme tra le campagne: vigili del fuoco sul posto, si indaga",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-28T12:00:32.487034+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/puglia-cooperazione-internazionale-regione-370mila-euro-nuovi-progetti.html",
+      "title": "Cooperazione internazionale, dalla Regione arrivano 370mila euro per nuovi progetti",
+      "section": "Attualita",
+      "scraped_at": "2026-08-28T12:00:32.487043+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/oria-incendio-auto-santuario-san-cosimo-28-agosto-2026.html",
+      "title": "Auto in fiamme nei pressi del santuario: intervento dei vigili del fuoco",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-29T06:01:00.642645+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/brindisi-lecce-oria-dda-chiude-indagini-operazione-whisper-droga-66-persone-coinvolte.html",
+      "title": "Operazione \"Whisper\", droga da canali albanesi e calabresi: chiuse le indagini per 66 persone",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-29T12:01:16.201987+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/latiano-dopo-furto-auto-centro-commerciale-mesagne-scoperta-centrale-riciclaggio.html",
+      "title": "Dopo il furto d'auto sventato, la scoperta: una centrale del riciclaggio \"in famiglia\"",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-29T12:01:16.202025+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/attualita/whatsapp-nuova-ondata-attacchi-zero-click-consigli-polizia-brindisi.html",
+      "title": "Whatsapp, nuova ondata di attacchi “zero-click”: i consigli della Polizia di Stato",
+      "section": "Attualita",
+      "scraped_at": "2026-08-29T18:00:16.771401+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/emergenza-blackout-sindaco-sporge-denuncia-formale-contro-enel-torre-santa-susanna.html",
+      "title": "Emergenza blackout: il sindaco sporge denuncia formale contro Enel",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-29T18:00:16.771451+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incendio-alba-fuoco-cataste-legname-spiaggia-libera-brindisi.html",
+      "title": "Incendio all'alba: a fuoco cataste di legname sulla spiaggia libera",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-29T18:00:16.771458+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/passaporto-falso-arresto-aeroporto-salento-brindisi.html",
+      "title": "Tenta di lasciare l'Italia con passaporto falso e rubato: arrestato dalla Polizia di frontiera",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-30T12:01:34.079294+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/carabinieri-disarmano-uomo-colgello-perrino-brindisi.html",
+      "title": "Paura al Perrino, paziente minaccia tutti con un taglierino: disarmato dai carabinieri",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-30T12:01:34.079331+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incendio-garage-oria-vigili-fuoco-salvano-due-cani.html",
+      "title": "Incendio notturno in un garage: i vigili del fuoco mettono in salvo due cani",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-30T12:01:34.079339+00:00"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/incidente-stradale/incidente-auto-trattore-mezzi-incendiati-erchie.html",
+      "title": "Incidenti stradali / Violento impatto all'alba tra auto e trattore: entrambi i mezzi prendono fuoco",
+      "section": "Cronaca",
+      "scraped_at": "2026-08-30T12:01:34.079347+00:00"
+    }
+  ]
+}
