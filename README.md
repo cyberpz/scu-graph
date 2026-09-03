@@ -6,7 +6,7 @@ Applicazione web investigativa e documentale per esplorare la storia e la distri
 
 ## Funzioni
 
-L'interfaccia, ispirata al design system **Jarvis-Domus**, contiene tre sezioni:
+L'interfaccia contiene tre sezioni:
 
 - **Grafo** — persone, clan, città, province e organizzazioni esterne visualizzate con `vis-network`.
 - **Mappa** — SVG interattiva della Puglia, zoomabile e navigabile, con distribuzione provinciale e punti comunali.
