@@ -1,0 +1,28 @@
+{
+  "url": "https://www.brindisireport.it/cronaca/operazione-fuori-gioco-san-donaci-richieste-condanne-abbreviato.html",
+  "title": "Operazione \"Fuori gioco\": invocati quasi tre secoli di carcere per 26 imputati",
+  "data_scaricamento": "2026-09-12",
+  "fonte": "BrindisiReport",
+  "operazione": "Fuori Gioco",
+  "fase_processuale": "Richieste condanne (rito abbreviato)",
+  "contenuto": "LECCE - Operazione \"Fuori gioco\", quasi tre secoli di carcere invocati dalla pm della Dda di Lecce Carmen Ruggiero nei confronti dei 26 imputati che hanno optato il rito abbreviato. Le pene più alte sono state chieste nei confronti del presunto boss dell'omonimo clan, Pietro Soleti, e di colui che per gli inquirenti è il suo braccio destro, Benito Clemente: 20 anni di reclusione a testa. L'inchiesta della guardia di finanza, coordinata dalla pm Ruggiero, sfociò il 27 settembre del 2024 in un blitz, in seguito all'ordinanza di custodia cautelare firmata dal gip del tribunale di Lecce Angelo Zizzari: furono 25 le persone arrestate. Le accuse contestate, a vario titolo, sono quelle di associazione per delinquere di tipo mafioso, estorsione, rapina, minacce, percosse e traffico di sostanze stupefacenti. Gli affari del presunto sodalizio avrebbero spaziato dalla gestione degli oli esausti alla droga, passando anche per il ramo delle scommesse.",
+  "imputati_principali": [
+    {"nome": "Pietro Soleti", "eta": 60, "citta": "San Donaci", "ruolo": "presunto boss", "richiesta_pena": "20 anni"},
+    {"nome": "Benito Clemente", "eta": 46, "citta": "San Pietro Vernotico", "ruolo": "braccio destro", "richiesta_pena": "20 anni"},
+    {"nome": "Antonio Caliandro", "eta": 45, "citta": "San Donaci", "richiesta_pena": "15 anni"},
+    {"nome": "Vincenzo Preste", "eta": 51, "citta": "San Donaci", "richiesta_pena": "15 anni"},
+    {"nome": "Antonio Diviggiano", "eta": 33, "citta": "Torre Santa Susanna", "richiesta_pena": "16 anni"},
+    {"nome": "Vincenzo Fortunato", "eta": 30, "citta": "San Donaci", "richiesta_pena": "14 anni"}
+  ],
+  "totale_imputati_abbreviato": 26,
+  "totale_arresti_blitz": 25,
+  "data_blitz": "2024-09-27",
+  "data_udienza": "2025-11-25",
+  "prossima_udienza": "2026-01-13",
+  "pm": "Carmen Ruggiero",
+  "gup": "Valeria Fedele",
+  "gip": "Angelo Zizzari",
+  "accuse": ["associazione mafiosa", "estorsione", "rapina", "minacce", "percosse", "traffico stupefacenti"],
+  "settori_criminali": ["oli esausti", "droga", "scommesse illegali"],
+  "note": "Articolo sulla fase di richieste condanne. Altri imputati sono a processo con rito ordinario davanti al tribunale di Brindisi."
+}

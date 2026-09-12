@@ -1,0 +1,183 @@
+{
+  "source": "BrindisiReport",
+  "search_query": "SCU",
+  "pages_scanned": 2,
+  "total_articles": 29,
+  "download_date": "2026-09-12T07:41:29.398196",
+  "articles": [
+    {
+      "url": "https://www.brindisireport.it/cronaca/estorsioni-tuturanesi-scu-mafia-droga-chieste-condanne-oltre-secolo.html",
+      "title": "Estorsioni dei \"tuturanesi\" Scu, mafia e droga: chieste condanne per oltre un secolo",
+      "operation": "Colemi",
+      "phase": "Richieste condanne"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/non-ho-partecipato-al-pestaggio-in-piazza-cristian-tarantino-non-lo-conosco.html",
+      "title": "\"Non ho partecipato al pestaggio in piazza. Cristian Tarantino? Non lo conosco\"",
+      "operation": "San Pietro Vernotico",
+      "phase": "Processo"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/inchiesta-colemi-comincia-processo-buccarella-guadalupi.html",
+      "title": "Inchiesta \"Colemi\": comincia il processo a carico di Buccarella e Guadalupi",
+      "operation": "Colemi",
+      "phase": "Processo"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/potere-scu-sai-come-funziona-prendi-cosa-soldi-dai-zio.html",
+      "title": "Il potere della Scu: \"Sai come funziona, prendi una cosa di soldi e gliela dai allo Zio\"",
+      "operation": "Fuori Gioco",
+      "phase": "Motivazioni sentenza"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/riesame-confermati-gravi-indizi-esigenze-cautelari-pietro-guadalupi.html",
+      "title": "Riesame: confermati gravi indizi ed esigenze cautelari per Pietro Guadalupi",
+      "operation": "Colemi",
+      "phase": "Riesame"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/cassazione-riesame-non-valutato-elementi-difesa-guadalupi.html",
+      "title": "La Cassazione: \"Il Riesame non ha valutato gli elementi della difesa di Guadalupi\"",
+      "operation": "Colemi",
+      "phase": "Cassazione"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/appello-estorsioni-scu-altre-accuse-pg-chiede-conferma-condanne.html",
+      "title": "Appello su estorsioni Scu e altre accuse: il pg chiede conferma delle condanne",
+      "operation": "Nexus",
+      "phase": "Appello"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/dal-paese-aquile-citta-federiciana-lunga-storia-narcotraffico.html",
+      "title": "Dal Paese delle Aquile alla Città Federiciana: una lunga storia di narcotraffico",
+      "operation": "Whisper",
+      "phase": "Narcotraffico"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/operazione-colemi-cassazione-annulla-rinvio-ordinanza-guadalupi.html",
+      "title": "Operazione \"Colemi\": la Cassazione annulla con rinvio l'ordinanza a carico di Guadalupi",
+      "operation": "Colemi",
+      "phase": "Cassazione"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/inchiesta-colemi-pietro-guadalupi-lascia-carcere-domiciliari.html",
+      "title": "Inchiesta \"Colemi\", Pietro Guadalupi lascia il carcere per i domiciliari",
+      "operation": "Colemi",
+      "phase": "Misure cautelari"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/inchiesta-tuturanesi-scu-buccarella-guadalupi-rinviati-giudizio.html",
+      "title": "Inchiesta sui \"tuturanesi\" della Scu: Buccarella e Guadalupi rinviati a giudizio",
+      "operation": "Colemi",
+      "phase": "Rinvio a giudizio"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/usura-tassi-192-turbativa-asta-comune-parte-civile.html",
+      "title": "Usura con tassi al 192 per cento e turbativa d'asta: Comune parte civile",
+      "operation": "Mesagne",
+      "phase": "Udienza preliminare"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/processo-mesagnesi-scu-comune-antiracket-chiedono-parti-civili.html",
+      "title": "Processo ai \"mesagnesi\" Scu: Comune e antiracket chiedono di essere parti civili",
+      "operation": "Mesagne",
+      "phase": "Processo"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/tentativo-estorsivo-scu-tobia-parisi-condannato-13-anni.html",
+      "title": "Tentativo estorsivo targato Scu: Tobia Parisi condannato a 13 anni di reclusione",
+      "operation": "Mesagne",
+      "phase": "Sentenza"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/azioni-plateali-video-social-cosi-clan-scu-tentato-soggiogare-paese.html",
+      "title": "Azioni plateali e video social: così il clan della Scu ha tentato di soggiogare il paese",
+      "operation": "San Pietro Vernotico",
+      "phase": "Motivazioni sentenza"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/cocaina-birilli-spinelli-mentre-domiciliari-arriva-condanna.html",
+      "title": "Cocaina in \"birilli\" e spinelli mentre era ai domiciliari: arriva la condanna",
+      "operation": "Mesagne",
+      "phase": "Sentenza"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/avvicendamento-vertice-squadra-mobile-grasso-lecce-arriva-natalicchio.html",
+      "title": "Avvicendamento al vertice della Squadra Mobile: Grasso a Lecce, arriva Natalicchio",
+      "operation": "Generale",
+      "phase": "Cronaca"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/the-wolf-concordato-secondo-grado-fioccano-sconti-pena.html",
+      "title": "\"The Wolf\": con il concordato in secondo grado fioccano gli \"sconti di pena\"",
+      "operation": "The Wolf",
+      "phase": "Appello"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/inchiesta-estorsioni-tuturanesi-scu-cominciata-udienza-preliminare.html",
+      "title": "Inchiesta sulle estorsioni dei \"tuturanesi\" della Scu: è cominciata l'udienza preliminare",
+      "operation": "Colemi",
+      "phase": "Udienza preliminare"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/colpo-cuore-scu-blitz-antimafia-core-scova-46enne-latitante-febbraio.html",
+      "title": "Colpo al cuore della Scu: il blitz antimafia \"Core\" scova anche un 46enne latitante da febbraio",
+      "operation": "Core",
+      "phase": "Blitz"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/agguato-kalashnikov-cosi-commando-scu-tento-uccidere-napoletano.html",
+      "title": "Agguato col kalashnikov: così il commando della Scu tentò di uccidere Napoletano",
+      "operation": "Guadadiello",
+      "phase": "Inchiesta"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/riesame-guadalupi-non-vittima-gestiva-lido-esponente-scu.html",
+      "title": "Il Riesame: \"Guadalupi non fu vittima, gestiva lido con esponente Scu\"",
+      "operation": "Colemi",
+      "phase": "Riesame"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/tentata-estorsione-scu-chiesta-condanna-18-anni-mezzo-parisi.html",
+      "title": "Tentata estorsione della Scu: chiesta condanna a 18 anni e mezzo per Parisi",
+      "operation": "Mesagne",
+      "phase": "Richiesta condanna"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/coca-albania-salento-processo-figlio-storico-boss-scu.html",
+      "title": "Coca dall'Albania al Salento: a processo il figlio di uno storico boss Scu",
+      "operation": "Narcotraffico",
+      "phase": "Processo"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/inchiesta-scu-leccese-chiesto-processo-tre-brindisini.html",
+      "title": "Inchiesta contro la Scu nel Leccese: chiesto il processo anche per tre brindisini",
+      "operation": "Escape",
+      "phase": "Udienza preliminare"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/san-pietro-escalation-mafiosa-ecco-come-indagammo-clan.html",
+      "title": "\"A San Pietro ci fu un'escalation mafiosa, ecco come indagammo sul clan\"",
+      "operation": "San Pietro Vernotico",
+      "phase": "Processo"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/terreni-confiscati-ex-libera-terra-nuovo-corso-punta-agro-ecologico.html",
+      "title": "Terreni confiscati ex Libera Terra: il nuovo corso punta sull'agro-ecologico",
+      "operation": "Confiscati",
+      "phase": "Cronaca"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/spartenza-scu-carichi-droga-tre-pene-ridotte-appello.html",
+      "title": "\"Spartenza\" della Scu sui carichi di droga: tre pene ridotte in appello",
+      "operation": "Oria",
+      "phase": "Appello"
+    },
+    {
+      "url": "https://www.brindisireport.it/cronaca/romano-parisi-accordo-frange-eravamo-due-corpi-sola-persona.html",
+      "title": "Romano: \"Parisi? C'era un accordo tra frange, eravamo due corpi e una sola persona\"",
+      "operation": "Mesagne",
+      "phase": "Processo"
+    }
+  ]
+}
