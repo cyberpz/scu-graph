@@ -20,12 +20,42 @@ La directory `data/` contiene:
 
 | File | Contenuto |
 |---|---|
-| `attori.json` | Dati anagrafici disponibili, condanne, stato e scarcerazione stimata |
-| `clan_puglia.json` | Profili, ruoli, arresti, condanne e appartenenze |
-| `connessioni_nazionali.json` | Collegamenti con Camorra, 'Ndrangheta, Cosa Nostra e reti criminali |
-| `geografia.json` | Distribuzione per provincia e comune, clan e operazioni |
+| `attori.json` | **748 attori** (anagrafici, condanne, stato, scarcerazione stimata) |
+| `clan_puglia.json` | **10 clan** (profili, ruoli, arresti, condanne, appartenenze) |
+| `connessioni_nazionali.json` | **16 connessioni** (Camorra, 'Ndrangheta, Cosa Nostra, reti criminali) |
+| `geografia.json` | **18 città** (distribuzione per provincia e comune, clan, operazioni) |
 
 I dati richiedono verifica incrociata: omonimie, stato detentivo e date giudiziarie possono cambiare o risultare discordanti tra le fonti.
+
+## Script di importazione
+
+La directory `scripts/` contiene strumenti per scaricare, analizzare e importare articoli:
+
+| Script | Funzione |
+|---|---|
+| `scu_downloader.py` | Scarica articoli da BrindisiReport con rate limiting e resume |
+| `analyze_scope.py` | Filtra articoli per rilevanza SCU/mafia |
+| `analyze_db_update.py` | Analizza differenze tra dati attuali e nuovi |
+| `merge_db.py` | Merge intelligente con validazione |
+
+### Utilizzo
+
+```bash
+# Attiva venv
+source venv/bin/activate
+
+# Scarica articoli (88 pagine, ~2-3 ore)
+python3 scripts/scu_downloader.py
+
+# Analizza scope
+python3 scripts/analyze_scope.py
+
+# Analizza aggiornamenti DB
+python3 scripts/analyze_db_update.py
+
+# Merge nel DB
+python3 scripts/merge_db.py
+```
 
 ## Archivio documentale
 
@@ -41,6 +71,8 @@ Le fonti sono conservate localmente in `sources/`, così il progetto non dipende
 - **414 titoli ANSA pertinenti** estratti da un archivio SQLite di 135.325 record, periodo 2020–2026.
 - **154 record BrindisiReport** dal database dello scraper locale.
 - **182 risultati storici BrindisiReport** recuperati tramite ricerche mirate Firecrawl.
+- **1.305 articoli BrindisiReport** scaricati da 88 pagine di ricerca SCU (2026-09-12).
+- **997 articoli in scope** per SCU/mafia (76.4% del totale).
 - Dimensione attuale dell'archivio `sources/`: circa **2,5 MB**.
 
 I conteggi delle diverse raccolte possono sovrapporsi: non rappresentano necessariamente articoli unici globali.
